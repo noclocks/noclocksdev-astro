@@ -1,28 +1,29 @@
 ---
-import Layout from '../layouts/Layout.astro'
-import Header from '../components/Header.astro'
-import Footer from '../components/Footer.astro'
-import Hero from '../components/Hero.astro'
-import Solutions from '../components/Solutions.astro'
+import Layout from "../layouts/Layout.astro";
+import Hero from "../components/Hero.astro";
+import Logo from "../components/Logo.astro";
 ---
 
-<Layout>
-  <Header />
+<Layout title="Welcome to No Clocks">
+	<Hero showDefault={false}>
+		<Logo
+			src="/images/noclocks-logo.png"
+			alt="No Clocks circular logo"
+			size={120}
+		/>
 
-  <Hero
-    tagline="Software that moves your business forward — not just on schedule, but ahead of it."
-    buttonText="Start a Project"
-    buttonLink="/contact"
-  />
-
-  <main class="site-main">
-    <section class="intro">
-      <div class="container">
-        <h2>Innovative Solutions</h2>
-        <p>We deliver custom software, cloud architecture, and intelligent data systems that fuel modern businesses.</p>
-      </div>
-    </section>
-  </main>
-
-  <Footer />
+		<h1>Welcome to No Clocks!</h1>
+		<p>Timeless Tech, Infinite Innovation.</p>
+		<p class="hero-intro">
+			<strong>No Clocks, LLC</strong> is a cutting-edge, technology-based agency
+			that seamlessly blends the expertise of seasoned Software Engineers,
+			Web Developers, Cloud Architects, Data Engineers, and Artificial Intelligence
+			Experts.
+		</p>
+		<div class="hero-cta-buttons">
+			<a href="/about" class="hero-button">ABOUT</a>
+			<a href="/services" class="hero-button">SERVICES</a>
+			<a href="/contact" class="hero-button">CONTACT</a>
+		</div>
+	</Hero>
 </Layout>

@@ -1,22 +1,32 @@
 ---
 import "../styles/hero.scss";
+import Logo from "./Logo.astro";
 
-const {
-  tagline = "Unlock Your Entrepreneurial Potential with Our Innovative Solutions!",
-  buttonText = "Learn More",
-  buttonLink = "/services"
-} = Astro.props;
+const { tagline = "Timeless Tech, Infinite Innovation.", showDefault = false } =
+    Astro.props;
 ---
 
 <section class="hero-section">
-  <div class="container">
-    <div class="hero-content">
-      <p class="hero-tagline">
-        {tagline}
-      </p>
-      <a href={buttonLink} class="hero-button">
-        {buttonText}
-      </a>
+    <div class="container">
+        <div class="hero-content">
+            <Logo
+                src="/images/noclocks-logo.png"
+                alt="No Clocks logo"
+                size={120}
+            />
+            <h1>Welcome to No Clocks!</h1>
+            <p class="hero-tagline">{tagline}</p>
+            <p class="hero-intro">
+                <strong>No Clocks, LLC</strong> is a cutting-edge, technology-based
+                agency that seamlessly blends the expertise of seasoned Software
+                Engineers, Web Developers, Cloud Architects, Data Engineers, and
+                Artificial Intelligence Experts.
+            </p>
+            <div class="hero-cta-buttons">
+                <a href="/about" class="hero-button">ABOUT</a>
+                <a href="/services" class="hero-button">SERVICES</a>
+                <a href="/contact" class="hero-button">CONTACT</a>
+            </div>
+        </div>
     </div>
-  </div>
 </section>

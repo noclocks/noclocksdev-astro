@@ -1,13 +1,14 @@
 ---
-title: "Layout"
+import "../styles/global.scss";
+const { title = "No Clocks, LLC" } = Astro.props;
 ---
 
+<!doctype html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title><slot name="title">No Clocks, LLC</slot></title>
-    <link rel="stylesheet" href="/src/styles/global.scss" />
+    <title>{title}</title>
   </head>
   <body>
     <slot />
