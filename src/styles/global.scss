@@ -1,0 +1,38 @@
+@use "sass:color";
+
+$font-stack: system-ui, sans-serif;
+$bg-color: #000;
+$text-color: #fff;
+$accent-color: #0af;
+
+body {
+  margin: 0;
+  font-family: $font-stack;
+  background-color: $bg-color;
+  color: $text-color;
+}
+
+.container {
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 1rem;
+}
+
+.site-header,
+.site-footer {
+  text-align: center;
+  padding: 2rem 0;
+  background-color: color.adjust($bg-color, $lightness: -5%);
+}
+
+.site-main {
+  padding: 3rem 0;
+}
+
+h1, h2 {
+  margin: 0.5em 0;
+}
+
+p {
+  margin: 0.5em 0;
+}

@@ -1,0 +1,22 @@
+---
+import "../styles/hero.scss";
+
+const {
+  tagline = "Unlock Your Entrepreneurial Potential with Our Innovative Solutions!",
+  buttonText = "Learn More",
+  buttonLink = "/services"
+} = Astro.props;
+---
+
+<section class="hero-section">
+  <div class="container">
+    <div class="hero-content">
+      <p class="hero-tagline">
+        {tagline}
+      </p>
+      <a href={buttonLink} class="hero-button">
+        {buttonText}
+      </a>
+    </div>
+  </div>
+</section>

@@ -1,0 +1,63 @@
+.hero-section {
+    position: relative;
+    padding: 6rem 1rem;
+    background: url("/images/atlanta-hero-image.jpeg") center center / cover no-repeat;
+    color: white;
+    text-align: center;
+    min-height: 90vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+
+    &::before {
+        content: "";
+        position: absolute;
+        inset: 0;
+        background: linear-gradient(to bottom right,
+                rgba(0, 0, 0, 0.6),
+                rgba(0, 0, 0, 0.4));
+        z-index: 1;
+    }
+}
+
+.hero-content {
+    position: relative;
+    z-index: 2;
+    max-width: 640px;
+    margin: 0 auto;
+    padding: 2rem;
+    border-radius: 8px;
+}
+
+.hero-tagline {
+    font-size: 1.75rem;
+    font-weight: 600;
+    margin-bottom: 1.5rem;
+}
+
+.hero-button {
+    display: inline-block;
+    background: #0af;
+    color: white;
+    padding: 0.75rem 2rem;
+    border-radius: 4px;
+    text-decoration: none;
+    font-weight: 500;
+    transition: background 0.2s ease;
+
+    &:hover {
+        background: #08c;
+    }
+}
+
+@media (max-width: 768px) {
+    .hero-tagline {
+        font-size: 1.4rem;
+    }
+
+    .hero-button {
+        font-size: 1rem;
+        padding: 0.65rem 1.5rem;
+    }
+}
