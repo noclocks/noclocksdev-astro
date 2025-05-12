@@ -1,10 +1,10 @@
 .hero-section {
     position: relative;
-    padding: 6rem 1rem;
+    padding: 8rem 1rem 6rem; /* Increased top padding to accommodate fixed navigation */
     background: url("/images/atlanta-hero-image.jpeg") center center / cover no-repeat;
     color: white;
     text-align: center;
-    min-height: 90vh;
+    min-height: 100vh;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -28,17 +28,17 @@
     border-radius: 8px;
     text-shadow: 0 1px 3px rgba(0, 0, 0, 0.8);
     }
-    
+
     .hero-logo {
         margin-bottom: 1.25rem;
-    
+
         .hero-logo-image {
             border-radius: 50%;
             background: white;
             padding: 4px;
             box-shadow: 0 2px 8px rgba(0, 0, 0, 0.4);
         }
-    
+
         .hero-logo-caption {
             margin-top: 0.5rem;
             font-weight: bold;
@@ -51,13 +51,13 @@
         margin-bottom: 1rem;
         font-weight: 500;
     }
-    
+
     .hero-intro {
         font-size: 1rem;
         line-height: 1.6;
         margin-bottom: 2rem;
     }
-    
+
     .hero-cta-buttons {
         display: flex;
         justify-content: center;
@@ -88,7 +88,7 @@
         font-size: 1rem;
         padding: 0.65rem 1.25rem;
         }
-        
+
         .hero-intro {
             font-size: 0.95rem;
     }

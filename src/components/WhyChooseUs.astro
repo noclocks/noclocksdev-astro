@@ -1,0 +1,233 @@
+---
+const benefits = [
+  {
+    title: "Expert Team",
+    description: "Our professionals bring years of industry experience and expertise in cutting-edge technologies."
+  },
+  {
+    title: "Custom Solutions",
+    description: "We develop tailored solutions that align perfectly with your unique business requirements."
+  },
+  {
+    title: "Agile Methodology",
+    description: "Our adaptive approach ensures quick delivery, continuous improvement, and client collaboration."
+  },
+  {
+    title: "Ongoing Support",
+    description: "We provide comprehensive support well beyond project completion to ensure lasting success."
+  }
+];
+
+const { title = "Why Choose No Clocks" } = Astro.props;
+---
+
+<section class="why-choose-us">
+  <div class="container">
+    <div class="why-choose-content">
+      <div class="why-choose-text">
+        <h2 class="section-title">{title}</h2>
+        <p class="why-choose-intro">
+          At No Clocks, we blend technical excellence with business acumen to deliver solutions
+          that drive meaningful results. Our approach is built on four key pillars:
+        </p>
+
+        <div class="benefits-list">
+          {benefits.map((benefit) => (
+            <div class="benefit-item">
+              <h3 class="benefit-title">{benefit.title}</h3>
+              <p class="benefit-description">{benefit.description}</p>
+            </div>
+          ))}
+        </div>
+      </div>
+
+      <div class="why-choose-visual">
+        <div class="visual-element">
+          <div class="code-block">
+            <pre>
+              <code>
+{`// No Clocks approach
+function deliverExcellence() {
+  const expertise = ["AI", "Cloud", "Data"];
+  const commitment = 100;
+
+  return {
+    innovation: true,
+    quality: "exceptional",
+    timeframe: "on-time",
+    support: "always"
+  };
+}`}
+              </code>
+            </pre>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<style lang="scss">
+  .why-choose-us {
+    padding: 6rem 0;
+    background-color: #080808;
+    overflow: hidden;
+
+    .why-choose-content {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 4rem;
+      align-items: center;
+    }
+
+    .section-title {
+      font-size: 2.5rem;
+      margin-bottom: 1.5rem;
+      position: relative;
+
+      &::after {
+        content: '';
+        display: block;
+        width: 60px;
+        height: 3px;
+        background: #0af;
+        margin-top: 0.75rem;
+      }
+    }
+
+    .why-choose-intro {
+      font-size: 1.2rem;
+      line-height: 1.6;
+      color: #ccc;
+      margin-bottom: 2.5rem;
+    }
+
+    .benefits-list {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 2rem;
+    }
+
+    .benefit-item {
+      position: relative;
+      padding-left: 1.5rem;
+
+      &::before {
+        content: '';
+        position: absolute;
+        left: 0;
+        top: 0.5rem;
+        width: 8px;
+        height: 8px;
+        background: #0af;
+        border-radius: 50%;
+      }
+    }
+
+    .benefit-title {
+      font-size: 1.3rem;
+      margin-bottom: 0.5rem;
+      color: #fff;
+    }
+
+    .benefit-description {
+      color: #aaa;
+      line-height: 1.5;
+    }
+
+    .why-choose-visual {
+      position: relative;
+    }
+
+    .visual-element {
+      width: 100%;
+      min-height: 300px;
+      position: relative;
+      overflow: hidden;
+      border-radius: 8px;
+      background: linear-gradient(135deg, #0a0a0a, #1a1a1a);
+      box-shadow: 0 30px 60px rgba(0, 0, 0, 0.3);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      &::before {
+        content: '';
+        position: absolute;
+        top: -50%;
+        left: -50%;
+        width: 200%;
+        height: 200%;
+        background: linear-gradient(
+          to bottom right,
+          rgba(10, 170, 255, 0.05),
+          rgba(10, 170, 255, 0.02),
+          rgba(10, 170, 255, 0.01),
+          transparent
+        );
+        transform: rotate(30deg);
+        z-index: 0;
+      }
+    }
+
+    .code-block {
+      position: relative;
+      z-index: 1;
+      width: 90%;
+      padding: 1.5rem;
+      font-family: 'Courier New', monospace;
+
+      pre {
+        margin: 0;
+        overflow-x: auto;
+
+        code {
+          color: #ccc;
+
+          .keyword {
+            color: #0af;
+          }
+
+          .string {
+            color: #0f9;
+          }
+
+          .comment {
+            color: #666;
+          }
+        }
+      }
+    }
+  }
+
+  @media (max-width: 992px) {
+    .why-choose-us {
+      .why-choose-content {
+        grid-template-columns: 1fr;
+        gap: 3rem;
+      }
+
+      .why-choose-visual {
+        order: -1;
+      }
+    }
+  }
+
+  @media (max-width: 768px) {
+    .why-choose-us {
+      padding: 4rem 0;
+
+      .section-title {
+        font-size: 2rem;
+      }
+
+      .why-choose-intro {
+        font-size: 1.1rem;
+      }
+
+      .benefit-title {
+        font-size: 1.2rem;
+      }
+    }
+  }
+</style>

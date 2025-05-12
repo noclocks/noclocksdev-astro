@@ -1,10 +1,17 @@
 ---
 import Layout from "../layouts/Layout.astro";
+import Navigation from "../components/Navigation.astro";
 import Hero from "../components/Hero.astro";
 import Logo from "../components/Logo.astro";
+import ServicesHighlight from "../components/ServicesHighlight.astro";
+import WhyChooseUs from "../components/WhyChooseUs.astro";
+import ContactCTA from "../components/ContactCTA.astro";
+import Footer from "../components/Footer.astro";
 ---
 
 <Layout title="Welcome to No Clocks">
+	<Navigation activeLink="/" />
+
 	<Hero showDefault={false}>
 		<Logo
 			src="/images/noclocks-logo.png"
@@ -26,4 +33,18 @@ import Logo from "../components/Logo.astro";
 			<a href="/contact" class="hero-button">CONTACT</a>
 		</div>
 	</Hero>
+
+	<main>
+		<ServicesHighlight />
+		<WhyChooseUs />
+		<ContactCTA />
+	</main>
+
+	<Footer />
 </Layout>
+
+<style>
+	main {
+		overflow: hidden;
+	}
+</style>
