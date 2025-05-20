@@ -4,36 +4,44 @@ const services = [
   {
     icon: "💻",
     title: "Software Engineering",
-    description: "Custom software solutions built with modern technologies to solve your complex business challenges.",
-    link: "/services/software-engineering"
+    description:
+      "Custom software solutions built with modern technologies to solve your complex business challenges.",
+    link: "/services/software-engineering",
   },
   {
     icon: "☁️",
     title: "Cloud Architecture",
-    description: "Scalable, secure, and cost-effective cloud infrastructure design and implementation.",
-    link: "/services/cloud-computing"
+    description:
+      "Scalable, secure, and cost-effective cloud infrastructure design and implementation.",
+    link: "/services/cloud-computing",
   },
   {
     icon: "🤖",
     title: "AI Solutions",
-    description: "Leverage the power of artificial intelligence and machine learning to unlock insights and automate processes.",
-    link: "/services/ai-solutions"
+    description:
+      "Leverage the power of artificial intelligence and machine learning to unlock insights and automate processes.",
+    link: "/services/ai-solutions",
   },
   {
     icon: "📊",
     title: "Data Engineering",
-    description: "Transform raw data into valuable business intelligence with robust data pipelines and analytics.",
-    link: "/services/data-engineering"
+    description:
+      "Transform raw data into valuable business intelligence with robust data pipelines and analytics.",
+    link: "/services/data-engineering",
   },
   {
     icon: "🛒",
     title: "E-commerce Solutions",
-    description: "Building robust online stores that drive sales and deliver excellent customer experiences.",
-    link: "/services/ecommerce"
-  }
+    description:
+      "Building robust online stores that drive sales and deliver excellent customer experiences.",
+    link: "/services/ecommerce",
+  },
 ];
 
-const { title = "Our Services" } = Astro.props;
+const { title = "Our Services", limit = 3 } = Astro.props;
+
+// Limit the number of services to display
+const displayServices = services.slice(0, limit);
 ---
 
 <section class="services-highlight">
@@ -41,14 +49,18 @@ const { title = "Our Services" } = Astro.props;
     <h2 class="section-title">{title}</h2>
 
     <div class="services-grid">
-      {services.map((service) => (
-        <div class="service-card">
-          <div class="service-icon">{service.icon}</div>
-          <h3 class="service-title">{service.title}</h3>
-          <p class="service-description">{service.description}</p>
-          <a href={service.link} class="service-link">Learn more</a>
-        </div>
-      ))}
+      {
+        displayServices.map((service) => (
+          <div class="service-card">
+            <div class="service-icon">{service.icon}</div>
+            <h3 class="service-title">{service.title}</h3>
+            <p class="service-description">{service.description}</p>
+            <a href={service.link} class="service-link">
+              Learn more
+            </a>
+          </div>
+        ))
+      }
     </div>
 
     <div class="services-cta">
@@ -69,7 +81,7 @@ const { title = "Our Services" } = Astro.props;
       position: relative;
 
       &::after {
-        content: '';
+        content: "";
         display: block;
         width: 80px;
         height: 3px;
@@ -89,7 +101,9 @@ const { title = "Our Services" } = Astro.props;
       background: rgba(255, 255, 255, 0.05);
       border-radius: 8px;
       padding: 2rem;
-      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      transition:
+        transform 0.3s ease,
+        box-shadow 0.3s ease;
       display: flex;
       flex-direction: column;
       height: 100%;

@@ -1,0 +1,163 @@
+---
+// ServiceGrid.astro - A component to display all services in a grid layout
+const services = [
+  {
+    icon: "💻",
+    title: "Software Engineering",
+    description: "Custom software solutions built with modern technologies to solve your complex business challenges.",
+    link: "/services/software-engineering",
+    image: "/images/services/software-engineering.jpg"
+  },
+  {
+    icon: "☁️",
+    title: "Cloud Computing",
+    description: "Scalable, secure, and cost-effective cloud infrastructure design and implementation.",
+    link: "/services/cloud-computing",
+    image: "/images/services/cloud-computing.jpg"
+  },
+  {
+    icon: "🤖",
+    title: "AI Solutions",
+    description: "Leverage the power of artificial intelligence and machine learning to unlock insights and automate processes.",
+    link: "/services/ai-solutions",
+    image: "/images/services/ai-solutions.jpg"
+  },
+  {
+    icon: "📊",
+    title: "Data Engineering",
+    description: "Transform raw data into valuable business intelligence with robust data pipelines and analytics.",
+    link: "/services/data-engineering",
+    image: "/images/services/data-engineering.jpg"
+  },
+  {
+    icon: "🛒",
+    title: "E-commerce Solutions",
+    description: "Building robust online stores that drive sales and deliver excellent customer experiences.",
+    link: "/services/ecommerce",
+    image: "/images/services/ecommerce.jpg"
+  },
+  {
+    icon: "📱",
+    title: "Web & Mobile Development",
+    description: "Creating intuitive, responsive websites and mobile applications that engage users across all devices.",
+    link: "/services/web-mobile",
+    image: "/images/services/web-mobile.jpg"
+  }
+];
+---
+
+<div class="services-grid-container">
+  <div class="services-grid">
+    {services.map((service) => (
+      <a href={service.link} class="service-card">
+        <div class="service-image" style={`background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.8)), url('${service.image}');`}>
+          <div class="service-icon">{service.icon}</div>
+          <h3 class="service-title">{service.title}</h3>
+        </div>
+        <div class="service-content">
+          <p class="service-description">{service.description}</p>
+          <span class="service-link-text">Learn more <span class="arrow">→</span></span>
+        </div>
+      </a>
+    ))}
+  </div>
+</div>
+
+<style>
+  .services-grid-container {
+    padding: 4rem 0;
+  }
+
+  .services-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+    gap: 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 1rem;
+  }
+
+  .service-card {
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 10px;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    text-decoration: none;
+    color: inherit;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+
+    &:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 15px 30px rgba(0, 170, 255, 0.15);
+
+      .service-link-text .arrow {
+        transform: translateX(5px);
+      }
+    }
+  }
+
+  .service-image {
+    height: 200px;
+    background-size: cover;
+    background-position: center;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 2rem;
+    text-align: center;
+  }
+
+  .service-icon {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+  }
+
+  .service-title {
+    font-size: 1.5rem;
+    color: white;
+    margin: 0;
+  }
+
+  .service-content {
+    padding: 1.5rem;
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .service-description {
+    font-size: 1rem;
+    line-height: 1.6;
+    color: #ccc;
+    margin-bottom: 1.5rem;
+    flex-grow: 1;
+  }
+
+  .service-link-text {
+    color: var(--color-primary, #0af);
+    font-weight: 500;
+    display: inline-flex;
+    align-items: center;
+    margin-top: auto;
+
+    .arrow {
+      margin-left: 0.5rem;
+      transition: transform 0.2s ease;
+    }
+  }
+
+  @media (max-width: 768px) {
+    .services-grid {
+      grid-template-columns: 1fr;
+    }
+
+    .service-image {
+      height: 150px;
+    }
+  }
+</style>

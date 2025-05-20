@@ -1,243 +1,258 @@
 ---
 // ServiceDetails.astro - A component to display a service detail page content
 interface Props {
-  title: string;
-  subtitle: string;
-  description: string;
-  imageSrc: string;
-  imageAlt: string;
-  features?: {
     title: string;
+    subtitle: string;
     description: string;
-    icon?: string;
-  }[];
-  caseStudies?: {
-    title: string;
-    description: string;
-    link?: string;
-  }[];
+    imageSrc: string;
+    imageAlt: string;
+    features?: {
+        title: string;
+        description: string;
+        icon?: string;
+    }[];
+    caseStudies?: {
+        title: string;
+        description: string;
+        link?: string;
+    }[];
 }
 
 const {
-  title,
-  subtitle,
-  description,
-  imageSrc,
-  imageAlt,
-  features = [],
-  caseStudies = []
+    title,
+    subtitle,
+    description,
+    imageSrc,
+    imageAlt,
+    features = [],
+    caseStudies = [],
 } = Astro.props;
 ---
 
 <div class="service-details">
-  <div class="service-header">
-    <div class="service-header-content container">
-      <h1>{title}</h1>
-      <p class="subtitle">{subtitle}</p>
-    </div>
-  </div>
-  
-  <div class="service-content container">
-    <div class="service-description">
-      <div class="service-image">
-        <img src={imageSrc} alt={imageAlt} />
-      </div>
-      <div class="service-text" set:html={description} />
-    </div>
-    
-    {features.length > 0 && (
-      <div class="service-features">
-        <h2>Key Features</h2>
-        <div class="features-grid">
-          {features.map(feature => (
-            <div class="feature-card">
-              {feature.icon && <span class="feature-icon">{feature.icon}</span>}
-              <h3>{feature.title}</h3>
-              <p>{feature.description}</p>
-            </div>
-          ))}
+    <div class="service-header">
+        <div class="service-header-content container">
+            <h1>{title}</h1>
+            <p class="subtitle">{subtitle}</p>
         </div>
-      </div>
-    )}
-    
-    {caseStudies.length > 0 && (
-      <div class="case-studies">
-        <h2>Case Studies</h2>
-        <div class="case-studies-list">
-          {caseStudies.map(study => (
-            <div class="case-study">
-              <h3>{study.title}</h3>
-              <p>{study.description}</p>
-              {study.link && (
-                <a href={study.link} class="case-study-link">Read More</a>
-              )}
+    </div>
+
+    <div class="service-content container">
+        <div class="service-description">
+            <div class="service-image">
+                <img src={imageSrc} alt={imageAlt} />
             </div>
-          ))}
+            <div class="service-text" set:html={description} />
         </div>
-      </div>
-    )}
-  </div>
+
+        {
+            features.length > 0 && (
+                <div class="service-features">
+                    <h2>Key Features</h2>
+                    <div class="features-grid">
+                        {features.map((feature) => (
+                            <div class="feature-card">
+                                {feature.icon && (
+                                    <span class="feature-icon">
+                                        {feature.icon}
+                                    </span>
+                                )}
+                                <h3>{feature.title}</h3>
+                                <p>{feature.description}</p>
+                            </div>
+                        ))}
+                    </div>
+                </div>
+            )
+        }
+
+        {
+            caseStudies.length > 0 && (
+                <div class="case-studies">
+                    <h2>Case Studies</h2>
+                    <div class="case-studies-list">
+                        {caseStudies.map((study) => (
+                            <div class="case-study">
+                                <h3>{study.title}</h3>
+                                <p>{study.description}</p>
+                                {study.link && (
+                                    <a
+                                        href={study.link}
+                                        class="case-study-link"
+                                    >
+                                        Read More
+                                    </a>
+                                )}
+                            </div>
+                        ))}
+                    </div>
+                </div>
+            )
+        }
+    </div>
 </div>
 
 <style lang="scss">
-  .service-header {
-    background-color: var(--color-background-soft);
-    padding: 4rem 0 2rem;
-    margin-bottom: 2rem;
-    
-    h1 {
-      font-size: 2.5rem;
-      margin-bottom: 1rem;
-      color: var(--color-text);
-    }
-    
-    .subtitle {
-      font-size: 1.2rem;
-      color: var(--color-primary);
-      margin: 0;
-    }
-  }
-  
-  .service-content {
-    padding-bottom: 4rem;
-  }
-  
-  .service-description {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 2rem;
-    margin-bottom: 3rem;
-    
-    @media (max-width: 768px) {
-      grid-template-columns: 1fr;
-    }
-    
-    .service-image {
-      img {
-        width: 100%;
-        border-radius: 8px;
-        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
-      }
-    }
-    
-    .service-text {
-      font-size: 1.1rem;
-      line-height: 1.6;
-      
-      p {
-        margin-bottom: 1rem;
-      }
-    }
-  }
-  
-  .service-features {
-    margin-bottom: 3rem;
-    
-    h2 {
-      font-size: 2rem;
-      margin-bottom: 2rem;
-      position: relative;
-      
-      &::after {
-        content: '';
-        display: block;
-        width: 60px;
-        height: 3px;
-        background: var(--color-primary);
-        margin: 0.5rem 0 0;
-      }
-    }
-    
-    .features-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-      gap: 1.5rem;
-    }
-    
-    .feature-card {
-      background: rgba(255, 255, 255, 0.05);
-      border-radius: 8px;
-      padding: 1.5rem;
-      transition: transform 0.3s ease, box-shadow 0.3s ease;
-      
-      &:hover {
-        transform: translateY(-5px);
-        box-shadow: 0 10px 20px rgba(0, 170, 255, 0.1);
-      }
-      
-      .feature-icon {
-        font-size: 2rem;
-        margin-bottom: 1rem;
-        display: block;
-      }
-      
-      h3 {
-        font-size: 1.3rem;
-        margin-bottom: 0.5rem;
-      }
-      
-      p {
-        color: #ccc;
-        line-height: 1.5;
-      }
-    }
-  }
-  
-  .case-studies {
-    h2 {
-      font-size: 2rem;
-      margin-bottom: 2rem;
-      position: relative;
-      
-      &::after {
-        content: '';
-        display: block;
-        width: 60px;
-        height: 3px;
-        background: var(--color-primary);
-        margin: 0.5rem 0 0;
-      }
-    }
-    
-    .case-studies-list {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-      gap: 2rem;
-    }
-    
-    .case-study {
-      background: rgba(255, 255, 255, 0.05);
-      border-radius: 8px;
-      padding: 2rem;
-      
-      h3 {
-        font-size: 1.5rem;
-        margin-bottom: 1rem;
-      }
-      
-      p {
-        color: #ccc;
-        line-height: 1.5;
-        margin-bottom: 1.5rem;
-      }
-      
-      .case-study-link {
-        color: var(--color-primary);
-        text-decoration: none;
-        font-weight: 500;
-        display: inline-flex;
-        align-items: center;
-        
-        &::after {
-          content: "→";
-          margin-left: 0.5rem;
-          transition: transform 0.2s ease;
+    .service-header {
+        background-color: var(--color-background-soft);
+        padding: 4rem 0 2rem;
+        margin-bottom: 2rem;
+
+        h1 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            color: var(--color-text);
         }
-        
-        &:hover::after {
-          transform: translateX(5px);
+
+        .subtitle {
+            font-size: 1.2rem;
+            color: var(--color-primary);
+            margin: 0;
         }
-      }
     }
-  }
+
+    .service-content {
+        padding-bottom: 4rem;
+    }
+
+    .service-description {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 2rem;
+        margin-bottom: 3rem;
+
+        @media (max-width: 768px) {
+            grid-template-columns: 1fr;
+        }
+
+        .service-image {
+            img {
+                width: 100%;
+                border-radius: 8px;
+                box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+            }
+        }
+
+        .service-text {
+            font-size: 1.1rem;
+            line-height: 1.6;
+
+            p {
+                margin-bottom: 1rem;
+            }
+        }
+    }
+
+    .service-features {
+        margin-bottom: 3rem;
+
+        h2 {
+            font-size: 2rem;
+            margin-bottom: 2rem;
+            position: relative;
+
+            &::after {
+                content: "";
+                display: block;
+                width: 60px;
+                height: 3px;
+                background: var(--color-primary);
+                margin: 0.5rem 0 0;
+            }
+        }
+
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 1.5rem;
+        }
+
+        .feature-card {
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 8px;
+            padding: 1.5rem;
+            transition:
+                transform 0.3s ease,
+                box-shadow 0.3s ease;
+
+            &:hover {
+                transform: translateY(-5px);
+                box-shadow: 0 10px 20px rgba(0, 170, 255, 0.1);
+            }
+
+            .feature-icon {
+                font-size: 2rem;
+                margin-bottom: 1rem;
+                display: block;
+            }
+
+            h3 {
+                font-size: 1.3rem;
+                margin-bottom: 0.5rem;
+            }
+
+            p {
+                color: #ccc;
+                line-height: 1.5;
+            }
+        }
+    }
+
+    .case-studies {
+        h2 {
+            font-size: 2rem;
+            margin-bottom: 2rem;
+            position: relative;
+
+            &::after {
+                content: "";
+                display: block;
+                width: 60px;
+                height: 3px;
+                background: var(--color-primary);
+                margin: 0.5rem 0 0;
+            }
+        }
+
+        .case-studies-list {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .case-study {
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 8px;
+            padding: 2rem;
+
+            h3 {
+                font-size: 1.5rem;
+                margin-bottom: 1rem;
+            }
+
+            p {
+                color: #ccc;
+                line-height: 1.5;
+                margin-bottom: 1.5rem;
+            }
+
+            .case-study-link {
+                color: var(--color-primary);
+                text-decoration: none;
+                font-weight: 500;
+                display: inline-flex;
+                align-items: center;
+
+                &::after {
+                    content: "→";
+                    margin-left: 0.5rem;
+                    transition: transform 0.2s ease;
+                }
+
+                &:hover::after {
+                    transform: translateX(5px);
+                }
+            }
+        }
+    }
 </style>
