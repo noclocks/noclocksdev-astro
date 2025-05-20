@@ -5,11 +5,45 @@ $bg-color: #000;
 $text-color: #fff;
 $accent-color: #0af;
 
+:root {
+  // Defining a comprehensive color palette for the theme
+  --color-background: #000;
+  --color-background-soft: #111;
+  --color-background-mute: #222;
+  --color-text: #fff;
+  --color-text-light: rgba(255, 255, 255, 0.85);
+  --color-heading: #fff;
+  --color-primary: #0af;
+  --color-primary-dark: #0092d1;
+  --color-primary-light: #4dc4ff;
+  --color-secondary: #ff3c00;
+  --color-border: #333;
+  --color-border-hover: #555;
+
+  // Section specific colors
+  --color-section-light: #111;
+  --color-section-dark: #000;
+
+  // Font settings
+  --font-family: #{$font-stack};
+  --font-size-base: 16px;
+  --line-height-base: 1.5;
+
+  // Structure
+  --max-width: 1200px;
+  --container-padding: 1rem;
+
+  // Transitions
+  --transition-speed: 0.3s;
+  --transition-function: ease;
+}
 body {
   margin: 0;
-  font-family: $font-stack;
-  background-color: $bg-color;
-  color: $text-color;
+  font-family: var(--font-family, $font-stack);
+    background-color: var(--color-background, $bg-color);
+    color: var(--color-text, $text-color);
+    line-height: var(--line-height-base);
+    font-size: var(--font-size-base);
 }
 
 .container {
