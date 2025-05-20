@@ -4,7 +4,7 @@ These instructions help guide GitHub Copilot when assisting with development on 
 
 ## Project Overview
 
-This is the official website for No Clocks, LLC, a technology consulting company. The site is built using [Astro](https://astro.build) and showcases the company's services, technology expertise, and contact information.
+This is the official website for No Clocks, LLC, a technology consulting company. The site is built using [Astro](https://astro.build) and showcases the company's services, technology expertise, and contact information. The website is still in development, transitioning from the legacy site to the new Astro implementation.
 
 ## External Resources for Context
 
@@ -12,6 +12,16 @@ When you need additional context, fetch information from these sources:
 
 - [Astro Documentation](https://docs.astro.build/) - For Astro framework best practices
 - [No Clocks Website](https://noclocks.dev) - For reference on existing content and design
+
+## Current and Planned Pages
+
+The following pages are being built in the new Astro implementation, with reference to the legacy site structure:
+
+- Homepage
+- About
+- Services
+- Team
+- Contact
 
 ## Project Structure
 
@@ -22,7 +32,7 @@ When you need additional context, fetch information from these sources:
   - `styles/` - SCSS stylesheets
 - `public/` - Static assets
 - `docs/` - Documentation and project info
-- `legacy/` - Previous version of the website (reference only)
+- `legacy/noclocks.dev/` - Previous version of the website with extracted HTML/JS/styles/images used as reference for the new implementation
 
 ## Development Guidelines
 
@@ -70,10 +80,11 @@ When assisting with this codebase, please follow these guidelines:
 
 ## Important Notes
 
-- Do not modify files in the `legacy/` directory as they are for reference only
-- The website is still under development - follow existing patterns when adding new features
+- Reference the files in `legacy/noclocks.dev/` directory for content and design guidance, but do not modify them
+- The website is still under active development - follow existing patterns when adding new features
 - The site uses Astro v5.7.x with a minimal setup (no additional integrations yet)
 - Always maintain responsive design principles
+- When implementing new pages or components, check the legacy website structure first for reference
 
 ## Context Gathering
 
