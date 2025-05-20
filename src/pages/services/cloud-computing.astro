@@ -1,9 +1,9 @@
 ---
-import Layout from '../layouts/Layout.astro';
-import Navigation from '../components/Navigation.astro';
-import ServiceDetails from '../components/ServiceDetails.astro';
-import ContactCTA from '../components/ContactCTA.astro';
-import Footer from '../components/Footer.astro';
+import Layout from "../layouts/Layout.astro";
+import Navigation from "../components/Navigation.astro";
+import ServiceDetails from "../components/ServiceDetails.astro";
+import ContactCTA from "../components/ContactCTA.astro";
+import Footer from "../components/Footer.astro";
 
 const title = "Cloud Computing Services";
 const subtitle = "Transforming businesses with secure cloud solutions";
@@ -16,53 +16,59 @@ const description = `
 `;
 
 const features = [
-  {
-    title: "Cloud Migration",
-    description: "Strategic migration of on-premises systems to cloud environments",
-    icon: "☁️"
-  },
-  {
-    title: "Multi-Cloud Architecture",
-    description: "Design and implementation of solutions across multiple cloud providers",
-    icon: "🏗️"
-  },
-  {
-    title: "Cloud Security",
-    description: "Implementing robust security controls and compliance measures",
-    icon: "🔒"
-  },
-  {
-    title: "Cost Optimization",
-    description: "Maximizing cloud ROI through efficient resource utilization",
-    icon: "💰"
-  }
+    {
+        title: "Cloud Migration",
+        description:
+            "Strategic migration of on-premises systems to cloud environments",
+        icon: "☁️",
+    },
+    {
+        title: "Multi-Cloud Architecture",
+        description:
+            "Design and implementation of solutions across multiple cloud providers",
+        icon: "🏗️",
+    },
+    {
+        title: "Cloud Security",
+        description:
+            "Implementing robust security controls and compliance measures",
+        icon: "🔒",
+    },
+    {
+        title: "Cost Optimization",
+        description:
+            "Maximizing cloud ROI through efficient resource utilization",
+        icon: "💰",
+    },
 ];
 
 const caseStudies = [
-  {
-    title: "Enterprise Cloud Migration",
-    description: "Helped a manufacturing company migrate their legacy systems to AWS, resulting in a 30% reduction in IT infrastructure costs and improved system reliability."
-  },
-  {
-    title: "Hybrid Cloud Implementation",
-    description: "Designed and implemented a hybrid cloud solution for a financial services firm, meeting strict compliance requirements while enabling greater business agility."
-  }
+    {
+        title: "Enterprise Cloud Migration",
+        description:
+            "Helped a manufacturing company migrate their legacy systems to AWS, resulting in a 30% reduction in IT infrastructure costs and improved system reliability.",
+    },
+    {
+        title: "Hybrid Cloud Implementation",
+        description:
+            "Designed and implemented a hybrid cloud solution for a financial services firm, meeting strict compliance requirements while enabling greater business agility.",
+    },
 ];
 ---
 
 <Layout title="Cloud Computing Services | No Clocks">
-  <Navigation activeLink="/services" />
-  
-  <ServiceDetails
-    title={title}
-    subtitle={subtitle}
-    description={description}
-    imageSrc="/images/services/cloud-computing.jpg"
-    imageAlt="Cloud Computing Services at No Clocks"
-    features={features}
-    caseStudies={caseStudies}
-  />
-  
-  <ContactCTA />
-  <Footer />
+    <Navigation activeLink="/services" />
+
+    <ServiceDetails
+        title={title}
+        subtitle={subtitle}
+        description={description}
+        imageSrc="/images/services/cloud-computing.jpg"
+        imageAlt="Cloud Computing Services at No Clocks"
+        features={features}
+        caseStudies={caseStudies}
+    />
+
+    <ContactCTA />
+    <Footer />
 </Layout>

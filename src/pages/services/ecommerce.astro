@@ -1,0 +1,73 @@
+---
+import Layout from "../layouts/Layout.astro";
+import Navigation from "../components/Navigation.astro";
+import ServiceDetails from "../components/ServiceDetails.astro";
+import ContactCTA from "../components/ContactCTA.astro";
+import Footer from "../components/Footer.astro";
+
+const title = "E-commerce Solutions";
+const subtitle = "Building robust online stores for your digital growth";
+const description = `
+<p>No Clocks, LLC delivers comprehensive e-commerce solutions that help businesses establish and grow their online presence. Whether you're launching a new online store or enhancing an existing e-commerce platform, our team provides end-to-end services to ensure your digital commerce strategy succeeds.</p>
+
+<p>We focus on creating seamless, user-friendly shopping experiences that convert visitors into customers and encourage repeat business. Our e-commerce solutions combine attractive design, intuitive navigation, secure payment processing, and effective integration with your inventory, CRM, and business systems.</p>
+
+<p>From small boutique shops to large scale enterprise e-commerce operations, we tailor our solutions to meet your specific business needs, target audience, and growth objectives. Our ongoing support ensures your e-commerce platform evolves alongside your business and technology trends.</p>
+`;
+
+const features = [
+    {
+        title: "Custom E-commerce Development",
+        description:
+            "Tailored online stores built to your unique business requirements",
+        icon: "🛒",
+    },
+    {
+        title: "Payment Gateway Integration",
+        description:
+            "Secure processing of multiple payment methods for global commerce",
+        icon: "💳",
+    },
+    {
+        title: "Inventory Management",
+        description:
+            "Automated systems to track and manage product availability",
+        icon: "📦",
+    },
+    {
+        title: "Mobile Commerce Optimization",
+        description: "Responsive designs for seamless shopping on any device",
+        icon: "📱",
+    },
+];
+
+const caseStudies = [
+    {
+        title: "Specialty Foods Online Store",
+        description:
+            "Developed a custom e-commerce platform for a specialty food retailer, resulting in a 65% increase in online sales and expanded market reach to international customers.",
+    },
+    {
+        title: "B2B E-commerce Portal",
+        description:
+            "Created a sophisticated B2B ordering system for a wholesale distributor that streamlined the purchasing process and increased order accuracy by 40%.",
+    },
+];
+---
+
+<Layout title="E-commerce Solutions | No Clocks">
+    <Navigation activeLink="/services" />
+
+    <ServiceDetails
+        title={title}
+        subtitle={subtitle}
+        description={description}
+        imageSrc="/images/services/ecommerce.jpg"
+        imageAlt="E-commerce Solutions at No Clocks"
+        features={features}
+        caseStudies={caseStudies}
+    />
+
+    <ContactCTA />
+    <Footer />
+</Layout>

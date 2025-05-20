@@ -1,0 +1,68 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Navigation from '../components/Navigation.astro';
+import ServiceDetails from '../components/ServiceDetails.astro';
+import ContactCTA from '../components/ContactCTA.astro';
+import Footer from '../components/Footer.astro';
+
+const title = "Web & Mobile Development";
+const subtitle = "Creating intuitive, responsive experiences across all devices";
+const description = `
+<p>No Clocks, LLC specializes in crafting beautiful, functional websites and mobile applications that engage users and drive business results. Our full-stack development team combines technical expertise with design sensibility to deliver digital experiences that look great and perform flawlessly across all devices.</p>
+
+<p>Whether you need a marketing website, customer portal, internal web application, or native mobile app, we follow a user-centered design approach to create solutions that are not only visually impressive but also intuitive and accessible. We stay current with the latest frameworks, tools, and best practices to ensure your web or mobile solution leverages the most appropriate technologies.</p>
+
+<p>All our development work is built with scalability, security, and maintainability in mind. We follow best practices for responsive design, performance optimization, and accessibility compliance to ensure your digital products reach and engage the widest possible audience.</p>
+`;
+
+const features = [
+  {
+    title: "Responsive Web Design",
+    description: "Websites that adapt perfectly to all screen sizes and devices",
+    icon: "🖥️"
+  },
+  {
+    title: "Progressive Web Apps",
+    description: "Web applications with native-like functionality and offline capabilities",
+    icon: "📱"
+  },
+  {
+    title: "Native Mobile Development",
+    description: "iOS and Android applications built for optimal performance",
+    icon: "📲"
+  },
+  {
+    title: "Cross-platform Solutions",
+    description: "Efficient development across multiple platforms with shared codebase",
+    icon: "🔄"
+  }
+];
+
+const caseStudies = [
+  {
+    title: "Healthcare Provider Mobile App",
+    description: "Developed a HIPAA-compliant mobile application for a healthcare provider that streamlined patient communication and appointment scheduling, resulting in a 30% reduction in missed appointments."
+  },
+  {
+    title: "Corporate Intranet Portal",
+    description: "Created a responsive web application for a multinational corporation that improved employee access to company resources and enhanced internal communication across global offices."
+  }
+];
+---
+
+<Layout title="Web & Mobile Development | No Clocks">
+  <Navigation activeLink="/services" />
+
+  <ServiceDetails
+    title={title}
+    subtitle={subtitle}
+    description={description}
+    imageSrc="/images/services/web-mobile.jpg"
+    imageAlt="Web and Mobile Development at No Clocks"
+    features={features}
+    caseStudies={caseStudies}
+  />
+
+  <ContactCTA />
+  <Footer />
+</Layout>

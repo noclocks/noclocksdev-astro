@@ -1,12 +1,13 @@
 ---
-import Layout from '../layouts/Layout.astro';
-import Navigation from '../components/Navigation.astro';
-import ServiceDetails from '../components/ServiceDetails.astro';
-import ContactCTA from '../components/ContactCTA.astro';
-import Footer from '../components/Footer.astro';
+import Layout from "../layouts/Layout.astro";
+import Navigation from "../components/Navigation.astro";
+import ServiceDetails from "../components/ServiceDetails.astro";
+import ContactCTA from "../components/ContactCTA.astro";
+import Footer from "../components/Footer.astro";
 
 const title = "AI Solutions";
-const subtitle = "Unlock the power of artificial intelligence for your business";
+const subtitle =
+    "Unlock the power of artificial intelligence for your business";
 const description = `
 <p>No Clocks, LLC helps businesses harness the transformative power of artificial intelligence and machine learning technologies. Our AI solutions are designed to solve complex business problems, automate processes, and uncover valuable insights from your data.</p>
 
@@ -16,53 +17,58 @@ const description = `
 `;
 
 const features = [
-  {
-    title: "Machine Learning Models",
-    description: "Custom algorithms designed to predict outcomes and identify patterns",
-    icon: "🤖"
-  },
-  {
-    title: "Natural Language Processing",
-    description: "Systems that understand, interpret, and generate human language",
-    icon: "💬"
-  },
-  {
-    title: "Computer Vision",
-    description: "Solutions that analyze and extract insights from images and video",
-    icon: "👁️"
-  },
-  {
-    title: "Intelligent Process Automation",
-    description: "AI-powered automation of complex business processes",
-    icon: "⚡"
-  }
+    {
+        title: "Machine Learning Models",
+        description:
+            "Custom algorithms designed to predict outcomes and identify patterns",
+        icon: "🤖",
+    },
+    {
+        title: "Natural Language Processing",
+        description:
+            "Systems that understand, interpret, and generate human language",
+        icon: "💬",
+    },
+    {
+        title: "Computer Vision",
+        description:
+            "Solutions that analyze and extract insights from images and video",
+        icon: "👁️",
+    },
+    {
+        title: "Intelligent Process Automation",
+        description: "AI-powered automation of complex business processes",
+        icon: "⚡",
+    },
 ];
 
 const caseStudies = [
-  {
-    title: "Predictive Maintenance System",
-    description: "Implemented an AI-powered predictive maintenance system for a manufacturing client, reducing equipment downtime by 35% and maintenance costs by 25%."
-  },
-  {
-    title: "Customer Service AI Assistant",
-    description: "Developed a natural language processing solution that handles 60% of customer service inquiries automatically, improving response times and customer satisfaction."
-  }
+    {
+        title: "Predictive Maintenance System",
+        description:
+            "Implemented an AI-powered predictive maintenance system for a manufacturing client, reducing equipment downtime by 35% and maintenance costs by 25%.",
+    },
+    {
+        title: "Customer Service AI Assistant",
+        description:
+            "Developed a natural language processing solution that handles 60% of customer service inquiries automatically, improving response times and customer satisfaction.",
+    },
 ];
 ---
 
 <Layout title="AI Solutions | No Clocks">
-  <Navigation activeLink="/services" />
-  
-  <ServiceDetails
-    title={title}
-    subtitle={subtitle}
-    description={description}
-    imageSrc="/images/services/ai-solutions.jpg"
-    imageAlt="AI Solutions at No Clocks"
-    features={features}
-    caseStudies={caseStudies}
-  />
-  
-  <ContactCTA />
-  <Footer />
+    <Navigation activeLink="/services" />
+
+    <ServiceDetails
+        title={title}
+        subtitle={subtitle}
+        description={description}
+        imageSrc="/images/services/ai-solutions.jpg"
+        imageAlt="AI Solutions at No Clocks"
+        features={features}
+        caseStudies={caseStudies}
+    />
+
+    <ContactCTA />
+    <Footer />
 </Layout>

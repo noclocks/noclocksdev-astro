@@ -1,9 +1,9 @@
 ---
-import Layout from '../layouts/Layout.astro';
-import Navigation from '../components/Navigation.astro';
-import ServiceDetails from '../components/ServiceDetails.astro';
-import ContactCTA from '../components/ContactCTA.astro';
-import Footer from '../components/Footer.astro';
+import Layout from "../layouts/Layout.astro";
+import Navigation from "../components/Navigation.astro";
+import ServiceDetails from "../components/ServiceDetails.astro";
+import ContactCTA from "../components/ContactCTA.astro";
+import Footer from "../components/Footer.astro";
 
 const title = "Software Engineering";
 const subtitle = "Custom software solutions built with modern technologies";
@@ -16,53 +16,58 @@ const description = `
 `;
 
 const features = [
-  {
-    title: "Full-stack Development",
-    description: "End-to-end development covering both frontend and backend components",
-    icon: "💻"
-  },
-  {
-    title: "API Development & Integration",
-    description: "Building robust APIs and integrating with third-party services",
-    icon: "🔄"
-  },
-  {
-    title: "DevOps & CI/CD",
-    description: "Automated testing, deployment, and infrastructure management",
-    icon: "⚙️"
-  },
-  {
-    title: "Legacy System Modernization",
-    description: "Updating and improving existing software systems",
-    icon: "🔧"
-  }
+    {
+        title: "Full-stack Development",
+        description:
+            "End-to-end development covering both frontend and backend components",
+        icon: "💻",
+    },
+    {
+        title: "API Development & Integration",
+        description:
+            "Building robust APIs and integrating with third-party services",
+        icon: "🔄",
+    },
+    {
+        title: "DevOps & CI/CD",
+        description:
+            "Automated testing, deployment, and infrastructure management",
+        icon: "⚙️",
+    },
+    {
+        title: "Legacy System Modernization",
+        description: "Updating and improving existing software systems",
+        icon: "🔧",
+    },
 ];
 
 const caseStudies = [
-  {
-    title: "Healthcare Provider Portal",
-    description: "We developed a secure, HIPAA-compliant portal for a healthcare provider, improving patient care coordination and reducing administrative overhead by 40%."
-  },
-  {
-    title: "Retail Inventory Management System",
-    description: "Our custom inventory system helped a retail chain optimize stock levels across multiple locations, resulting in a 25% reduction in excess inventory costs."
-  }
+    {
+        title: "Healthcare Provider Portal",
+        description:
+            "We developed a secure, HIPAA-compliant portal for a healthcare provider, improving patient care coordination and reducing administrative overhead by 40%.",
+    },
+    {
+        title: "Retail Inventory Management System",
+        description:
+            "Our custom inventory system helped a retail chain optimize stock levels across multiple locations, resulting in a 25% reduction in excess inventory costs.",
+    },
 ];
 ---
 
 <Layout title="Software Engineering | No Clocks">
-  <Navigation activeLink="/services" />
-  
-  <ServiceDetails
-    title={title}
-    subtitle={subtitle}
-    description={description}
-    imageSrc="/images/services/software-engineering.jpg"
-    imageAlt="Software Engineering at No Clocks"
-    features={features}
-    caseStudies={caseStudies}
-  />
-  
-  <ContactCTA />
-  <Footer />
+    <Navigation activeLink="/services" />
+
+    <ServiceDetails
+        title={title}
+        subtitle={subtitle}
+        description={description}
+        imageSrc="/images/services/software-engineering.jpg"
+        imageAlt="Software Engineering at No Clocks"
+        features={features}
+        caseStudies={caseStudies}
+    />
+
+    <ContactCTA />
+    <Footer />
 </Layout>
