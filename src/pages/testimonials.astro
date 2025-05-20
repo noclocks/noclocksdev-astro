@@ -7,96 +7,100 @@ import TestimonialCard from "../components/TestimonialCard.astro";
 ---
 
 <Layout title="Client Testimonials | No Clocks">
-  <Navigation activeLink="/testimonials" />
+    <Navigation activeLink="/testimonials" />
 
-  <div class="testimonials-hero">
-    <div class="container">
-      <h1>Client Testimonials</h1>
-      <p class="subtitle">What our clients say about working with us</p>
-    </div>
-  </div>
-
-  <main class="site-main">
-    <div class="container testimonials-intro">
-      <p>
-        At No Clocks, we measure our success through the success of our clients. 
-        Here's what some of them have to say about their experience working with our team.
-      </p>
+    <div class="testimonials-hero">
+        <div class="container">
+            <h1>Client Testimonials</h1>
+            <p class="subtitle">What our clients say about working with us</p>
+        </div>
     </div>
 
-    <div class="container testimonials-grid">
-      <TestimonialCard
-        name="Sam Sullivan"
-        company="Lake Country Hunt Club"
-        image="/images/testimonials/sam-sullivan.png"
-        quote="No Clocks, LLC has been invaluable in helping start my business. As highly detail-oriented developers and IT admins, No Clocks played a crucial role in organizing, planning, and strategizing the management of our data, the development of a custom mapping application, and the building of our website."
-        testimonial="No Clocks, LLC has been an invaluable asset in helping start my business from the ground up. As highly detail-oriented developers and IT admins, No Clocks played a crucial role in organizing, planning, and strategizing the management of our data, the development of a custom mapping application, and the building of our website. Working with No Clocks has been an absolute pleasure due to their exceptional project management style. They clearly map out their plans with visual representations and remain adaptable to our evolving needs as a client. No Clocks is forthright in their feedback, which has been instrumental in helping us avoid unforeseen roadblocks and pitfalls that would have otherwise gone unnoticed due to my limited knowledge in his areas of expertise."
-        website="https://www.lakecountryhuntclub.com"
-        rating={5}
-        tags={["Business", "Consulting", "Mapping", "Data Management"]}
-      />
+    <main class="site-main">
+        <div class="container testimonials-intro">
+            <p>
+                At No Clocks, we measure our success through the success of our
+                clients. Here's what some of them have to say about their
+                experience working with our team.
+            </p>
+        </div>
 
-      <TestimonialCard
-        name="Villard Bastien"
-        company="Law Offices Of Villard Bastien"
-        image="/images/testimonials/villard-bastien.jpeg"
-        quote="Your team seamlessly transitioned my website to a modern, user-friendly platform that dramatically improved my online presence and functionality."
-        testimonial="I'm truly grateful for the exceptional work your team has done in helping me revamp my law firm's website. As a busy professional, I was feeling trapped in a frustrating situation with my previous website vendor, who had me locked into an inflexible contract and was providing subpar service. But your team stepped in and seamlessly transitioned my website to a more modern, user-friendly platform that has dramatically improved the online presence and functionality of my practice. The level of care and attention to detail your team demonstrated throughout the process was truly impressive."
-        website="https://www.bastienlaw.com"
-        rating={5}
-        tags={["Website", "Law", "Redesign", "SEO", "User Experience"]}
-      />
-    </div>
-  </main>
+        <div class="container testimonials-grid">
+            <TestimonialCard
+                name="Sam Sullivan"
+                company="Lake Country Hunt Club"
+                image="/images/testimonials/sam-sullivan.png"
+                quote="No Clocks, LLC has been invaluable in helping start my business. As highly detail-oriented developers and IT admins, No Clocks played a crucial role in organizing, planning, and strategizing the management of our data, the development of a custom mapping application, and the building of our website."
+                testimonial="No Clocks, LLC has been an invaluable asset in helping start my business from the ground up. As highly detail-oriented developers and IT admins, No Clocks played a crucial role in organizing, planning, and strategizing the management of our data, the development of a custom mapping application, and the building of our website. Working with No Clocks has been an absolute pleasure due to their exceptional project management style. They clearly map out their plans with visual representations and remain adaptable to our evolving needs as a client. No Clocks is forthright in their feedback, which has been instrumental in helping us avoid unforeseen roadblocks and pitfalls that would have otherwise gone unnoticed due to my limited knowledge in his areas of expertise. No Clock's multilingual development competencies have been a game-changer, providing us with a true one-stop shop for all of our development and IT-related needs, both past and present. I am deeply grateful for the invaluable contributions the No Clocks team have made to the success of my business."
+                website="https://www.lakecountryhuntclub.com"
+                rating={5}
+                tags={["Business", "Consulting", "Mapping", "Data Management"]}
+            />
 
-  <ContactCTA />
-  <Footer />
+            <TestimonialCard
+                name="Villard Bastien"
+                company="Law Offices Of Villard Bastien"
+                image="/images/testimonials/villard-bastien.jpeg"
+                quote="Your team seamlessly transitioned my website to a modern, user-friendly platform that dramatically improved my online presence and functionality."
+                testimonial="I'm truly grateful for the exceptional work your team has done in helping me revamp my law firm's website. As a busy professional, I was feeling trapped in a frustrating situation with my previous website vendor, who had me locked into an inflexible contract and was providing subpar service. But your team stepped in and seamlessly transitioned my website to a more modern, user-friendly platform that has dramatically improved the online presence and functionality of my practice. The level of care and attention to detail your team demonstrated throughout the process was truly impressive. They took the time to deeply understand my unique needs and goals, and then crafted a tailored solution that has elevated my website far beyond what I could have imagined. The new site is not only visually appealing and easy to navigate, but it has also proven to be a powerful tool for engaging with my clients and attracting new leads. Most importantly, your team liberated me from the vendor lock-in that had been weighing me down. I now have the freedom and flexibility to control and update my website as needed, without being beholden to an unresponsive third party. This has been an absolute game-changer, allowing me to focus my energy on serving my clients rather than constantly dealing with website-related headaches. I cannot recommend your services highly enough. The expertise, responsiveness, and genuine care your team has demonstrated is truly exceptional. I'm deeply appreciative of the positive impact you've had on my law practice, and I look forward to our continued partnership as I grow and evolve my online presence."
+                website="https://www.bastienlaw.com"
+                rating={5}
+                tags={["Website", "Law", "Redesign", "SEO", "User Experience"]}
+            />
+        </div>
+    </main>
+
+    <ContactCTA />
+    <Footer />
 </Layout>
 
 <style>
-  .testimonials-hero {
-    background-color: #111;
-    background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.9)),
-      url("/images/heroes/testimonials-hero.jpg");
-    background-size: cover;
-    background-position: center;
-    padding: 8rem 0 4rem;
-    text-align: center;
-    margin-bottom: 0;
-  }
-
-  .testimonials-hero h1 {
-    font-size: 3rem;
-    margin-bottom: 1rem;
-    color: white;
-  }
-
-  .testimonials-hero .subtitle {
-    font-size: 1.5rem;
-    color: var(--color-primary);
-    margin: 0;
-  }
-
-  .testimonials-intro {
-    padding-top: 3rem;
-    padding-bottom: 1rem;
-    max-width: 800px;
-    margin: 0 auto;
-    text-align: center;
-    font-size: 1.2rem;
-    line-height: 1.6;
-  }
-
-  .testimonials-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
-    gap: 2.5rem;
-    padding: 2rem 0 4rem;
-  }
-
-  @media (max-width: 768px) {
-    .testimonials-grid {
-      grid-template-columns: 1fr;
+    .testimonials-hero {
+        background-color: #111;
+        background-image: linear-gradient(
+                rgba(0, 0, 0, 0.7),
+                rgba(0, 0, 0, 0.9)
+            ),
+            url("/images/heroes/testimonials-hero.jpg");
+        background-size: cover;
+        background-position: center;
+        padding: 8rem 0 4rem;
+        text-align: center;
+        margin-bottom: 0;
     }
-  }
+
+    .testimonials-hero h1 {
+        font-size: 3rem;
+        margin-bottom: 1rem;
+        color: white;
+    }
+
+    .testimonials-hero .subtitle {
+        font-size: 1.5rem;
+        color: var(--color-primary);
+        margin: 0;
+    }
+
+    .testimonials-intro {
+        padding-top: 3rem;
+        padding-bottom: 1rem;
+        max-width: 800px;
+        margin: 0 auto;
+        text-align: center;
+        font-size: 1.2rem;
+        line-height: 1.6;
+    }
+
+    .testimonials-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+        gap: 2.5rem;
+        padding: 2rem 0 4rem;
+    }
+
+    @media (max-width: 768px) {
+        .testimonials-grid {
+            grid-template-columns: 1fr;
+        }
+    }
 </style>

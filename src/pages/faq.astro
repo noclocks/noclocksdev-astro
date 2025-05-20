@@ -219,18 +219,18 @@ import Footer from "../components/Footer.astro";
   // JavaScript for the accordion functionality
   document.addEventListener('DOMContentLoaded', () => {
     const accordionItems = document.querySelectorAll('.accordion-item');
-    
+
     accordionItems.forEach(item => {
       const header = item.querySelector('.accordion-header');
-      
+
       header.addEventListener('click', () => {
         const isCurrentlyActive = item.classList.contains('active');
-        
+
         // Close all accordion items
         accordionItems.forEach(accItem => {
           accItem.classList.remove('active');
         });
-        
+
         // If the clicked item wasn't active before, open it
         if (!isCurrentlyActive) {
           item.classList.add('active');

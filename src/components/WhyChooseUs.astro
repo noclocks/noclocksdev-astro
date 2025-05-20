@@ -1,4 +1,7 @@
 ---
+import "prismjs/themes/prism-tomorrow.css";
+import { Prism } from "@astrojs/prism";
+
 const benefits = [
   {
     title: "Expert Team",
@@ -15,6 +18,155 @@ const benefits = [
   {
     title: "Ongoing Support",
     description: "We provide comprehensive support well beyond project completion to ensure lasting success."
+  }
+];
+
+const languages = [
+  {
+    name: "JavaScript",
+    value: "js",
+    code: `// No Clocks approach in JavaScript
+function deliverExcellence() {
+  const expertise = ["AI", "Cloud", "Data"];
+  const commitment = 100;
+
+  return {
+    innovation: true,
+    quality: "exceptional",
+    timeframe: "on-time",
+    support: "always"
+  };
+}`
+  },
+  {
+    name: "TypeScript",
+    value: "ts",
+    code: `// No Clocks approach in TypeScript
+function deliverExcellence(): Record<string, any> {
+  const expertise: string[] = ["AI", "Cloud", "Data"];
+  const commitment: number = 100;
+
+  return {
+    innovation: true,
+    quality: "exceptional",
+    timeframe: "on-time",
+    support: "always"
+  };
+}`
+  },
+  {
+    name: "Python",
+    value: "python",
+    code: `# No Clocks approach in Python
+def deliver_excellence():
+    expertise = ["AI", "Cloud", "Data"]
+    commitment = 100
+
+    return {
+        "innovation": True,
+        "quality": "exceptional",
+        "timeframe": "on-time",
+        "support": "always"
+    }`
+  },
+  {
+    name: "R",
+    value: "r",
+    code: `# No Clocks approach in R
+deliver_excellence <- function() {
+  expertise <- c("AI", "Cloud", "Data")
+  commitment <- 100
+
+  return(list(
+    innovation = TRUE,
+    quality = "exceptional",
+    timeframe = "on-time",
+    support = "always"
+  ))
+}`
+  },
+  {
+    name: "PowerShell",
+    value: "powershell",
+    code: `# No Clocks approach in PowerShell
+function Deliver-Excellence {
+    $expertise = @("AI", "Cloud", "Data")
+    $commitment = 100
+
+    return @{
+        innovation = $true
+        quality = "exceptional"
+        timeframe = "on-time"
+        support = "always"
+    }
+}`
+  },
+  {
+    name: "Bash",
+    value: "bash",
+    code: `# No Clocks approach in Bash
+deliver_excellence() {
+    local expertise=("AI" "Cloud" "Data")
+    local commitment=100
+
+    echo "Innovation: enabled"
+    echo "Quality: exceptional"
+    echo "Timeframe: on-time"
+    echo "Support: always"
+}`
+  },
+  {
+    name: "SQL",
+    value: "sql",
+    code: `-- No Clocks approach in SQL
+CREATE TABLE NoClocks_Excellence (
+    Expertise VARCHAR(50),
+    Commitment INTEGER,
+    Innovation BOOLEAN,
+    Quality VARCHAR(50),
+    Timeframe VARCHAR(50),
+    Support VARCHAR(50)
+);
+
+INSERT INTO NoClocks_Excellence VALUES
+    ('AI', 100, TRUE, 'exceptional', 'on-time', 'always'),
+    ('Cloud', 100, TRUE, 'exceptional', 'on-time', 'always'),
+    ('Data', 100, TRUE, 'exceptional', 'on-time', 'always');`
+  },
+  {
+    name: "Go",
+    value: "go",
+    code: `// No Clocks approach in Go
+package noclocks
+
+func DeliverExcellence() map[string]interface{} {
+    expertise := []string{"AI", "Cloud", "Data"}
+    commitment := 100
+
+    return map[string]interface{}{
+        "innovation": true,
+        "quality":    "exceptional",
+        "timeframe":  "on-time",
+        "support":    "always",
+    }
+}`
+  },
+  {
+    name: "Rust",
+    value: "rust",
+    code: `// No Clocks approach in Rust
+fn deliver_excellence() -> std::collections::HashMap<&'static str, Box<dyn std::any::Any>> {
+    let expertise = vec!["AI", "Cloud", "Data"];
+    let commitment = 100;
+
+    let mut result = std::collections::HashMap::new();
+    result.insert("innovation", Box::new(true) as Box<dyn std::any::Any>);
+    result.insert("quality", Box::new("exceptional") as Box<dyn std::any::Any>);
+    result.insert("timeframe", Box::new("on-time") as Box<dyn std::any::Any>);
+    result.insert("support", Box::new("always") as Box<dyn std::any::Any>);
+
+    result
+}`
   }
 ];
 
@@ -43,29 +195,60 @@ const { title = "Why Choose No Clocks" } = Astro.props;
 
       <div class="why-choose-visual">
         <div class="visual-element">
-          <div class="code-block">
-            <pre>
-              <code>
-{`// No Clocks approach
-function deliverExcellence() {
-  const expertise = ["AI", "Cloud", "Data"];
-  const commitment = 100;
-
-  return {
-    innovation: true,
-    quality: "exceptional",
-    timeframe: "on-time",
-    support: "always"
-  };
-}`}
-              </code>
-            </pre>
+          <div class="code-tabs">
+            <div class="tabs-header">
+              {languages.map((lang, index) => (
+                <button
+                  class={`tab-button ${index === 0 ? 'active' : ''}`}
+                  data-language={lang.value}
+                >
+                  {lang.name}
+                </button>
+              ))}
+            </div>
+            <div class="code-block">
+              {languages.map((lang, index) => (
+                <div
+                  class={`tab-content ${index === 0 ? 'active' : ''}`}
+                  data-language={lang.value}
+                >
+                  <Prism lang={lang.value} code={lang.code} />
+                </div>
+              ))}
+            </div>
           </div>
         </div>
       </div>
     </div>
   </div>
 </section>
+
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    const tabButtons = document.querySelectorAll('.tab-button');
+    const tabContents = document.querySelectorAll('.tab-content');
+
+    tabButtons.forEach(button => {
+      button.addEventListener('click', () => {
+        // Get the language value from the clicked button
+        const language = button.getAttribute('data-language');
+
+        // Remove active class from all buttons and contents
+        tabButtons.forEach(btn => btn.classList.remove('active'));
+        tabContents.forEach(content => content.classList.remove('active'));
+
+        // Add active class to the clicked button
+        button.classList.add('active');
+
+        // Find and show the corresponding content
+        const activeContent = document.querySelector(`.tab-content[data-language="${language}"]`);
+        if (activeContent) {
+          activeContent.classList.add('active');
+        }
+      });
+    });
+  });
+</script>
 
 <style lang="scss">
   .why-choose-us {
@@ -170,31 +353,89 @@ function deliverExcellence() {
       }
     }
 
-    .code-block {
+    .code-tabs {
       position: relative;
       z-index: 1;
       width: 90%;
-      padding: 1.5rem;
-      font-family: 'Courier New', monospace;
+      border-radius: 6px;
+      overflow: hidden;
+      background: #1a1a1a;
+      box-shadow: 0 4px 30px rgba(0, 0, 0, 0.4);
+    }
 
-      pre {
+    .tabs-header {
+      display: flex;
+      overflow-x: auto;
+      background: #0f0f0f;
+      border-bottom: 1px solid #333;
+
+      &::-webkit-scrollbar {
+        height: 5px;
+      }
+
+      &::-webkit-scrollbar-thumb {
+        background: #444;
+        border-radius: 10px;
+      }
+    }
+
+    .tab-button {
+      background: transparent;
+      border: none;
+      color: #999;
+      padding: 0.75rem 1rem;
+      font-size: 0.85rem;
+      font-weight: 500;
+      cursor: pointer;
+      transition: all 0.2s;
+      white-space: nowrap;
+
+      &:hover {
+        color: #0af;
+        background: rgba(10, 170, 255, 0.05);
+      }
+
+      &.active {
+        color: #0af;
+        background: #1a1a1a;
+        border-bottom: 2px solid #0af;
+      }
+    }
+
+    .code-block {
+      position: relative;
+      z-index: 1;
+      width: 100%;
+      max-height: 350px;
+      overflow: auto;
+
+      &::-webkit-scrollbar {
+        width: 6px;
+        height: 6px;
+      }
+
+      &::-webkit-scrollbar-thumb {
+        background: #444;
+        border-radius: 10px;
+      }
+    }
+
+    .tab-content {
+      display: none;
+      padding: 0;
+
+      &.active {
+        display: block;
+      }
+
+      :global(pre) {
         margin: 0;
-        overflow-x: auto;
+        border-radius: 0;
+        background: transparent !important;
+        font-size: 0.9rem;
 
-        code {
-          color: #ccc;
-
-          .keyword {
-            color: #0af;
-          }
-
-          .string {
-            color: #0f9;
-          }
-
-          .comment {
-            color: #666;
-          }
+        :global(code) {
+          font-family: 'JetBrains Mono', 'Fira Code', 'Courier New', monospace;
         }
       }
     }

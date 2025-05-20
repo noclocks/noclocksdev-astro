@@ -18,6 +18,11 @@ const { activeLink = "/" } = Astro.props;
         >Services</a
       >
       <a href="/team" class={activeLink === "/team" ? "active" : ""}>Team</a>
+      <a
+        href="/testimonials"
+        class={activeLink === "/testimonials" ? "active" : ""}>Testimonials</a
+      >
+      <a href="/faq" class={activeLink === "/faq" ? "active" : ""}>FAQ</a>
       <a href="/contact" class={activeLink === "/contact" ? "active" : ""}
         >Contact</a
       >
@@ -90,7 +95,9 @@ const { activeLink = "/" } = Astro.props;
       }
 
       .nav-links {
-        gap: 1rem;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 0.8rem 1rem;
 
         a {
           font-size: 0.9rem;

@@ -1,14 +1,14 @@
 ---
 // TestimonialCard.astro - A component to display a single testimonial
 const {
-  name,
-  company,
-  image,
-  quote,
-  testimonial,
-  website,
-  rating = 5,
-  tags = []
+    name,
+    company,
+    image,
+    quote,
+    testimonial,
+    website,
+    rating = 5,
+    tags = [],
 } = Astro.props;
 
 // Generate star rating
@@ -16,154 +16,175 @@ const stars = "★".repeat(rating) + "☆".repeat(5 - rating);
 ---
 
 <div class="testimonial-card">
-  <div class="testimonial-header">
-    <div class="testimonial-image">
-      <img src={image} alt={`${name} from ${company}`} />
+    <div class="testimonial-header">
+        <div class="testimonial-image">
+            <img src={image} alt={`${name} from ${company}`} />
+        </div>
+        <div class="testimonial-meta">
+            <h3 class="testimonial-name">{name}</h3>
+            <p class="testimonial-company">{company}</p>
+            {
+                website && (
+                    <a
+                        href={website}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        class="testimonial-website"
+                    >
+                        Visit Website
+                    </a>
+                )
+            }
+            <div class="testimonial-rating">
+                <span class="stars">{stars}</span>
+            </div>
+        </div>
     </div>
-    <div class="testimonial-meta">
-      <h3 class="testimonial-name">{name}</h3>
-      <p class="testimonial-company">{company}</p>
-      {website && (
-        <a href={website} target="_blank" rel="noopener noreferrer" class="testimonial-website">
-          Visit Website
-        </a>
-      )}
-      <div class="testimonial-rating">
-        <span class="stars">{stars}</span>
-      </div>
+
+    <div class="testimonial-quote">
+        <svg
+            class="quote-mark"
+            viewBox="0 0 24 24"
+            width="24"
+            height="24"
+            fill="currentColor"
+        >
+            <path
+                d="M10 11L8 13h4v4H6v-4l2-2V7h4v4h-2zm8 0l-2 2h4v4h-6v-4l2-2V7h4v4h-2z"
+            ></path>
+        </svg>
+        <blockquote>
+            {quote}
+        </blockquote>
     </div>
-  </div>
-  
-  <div class="testimonial-quote">
-    <svg class="quote-mark" viewBox="0 0 24 24" width="24" height="24" fill="currentColor">
-      <path d="M10 11L8 13h4v4H6v-4l2-2V7h4v4h-2zm8 0l-2 2h4v4h-6v-4l2-2V7h4v4h-2z"></path>
-    </svg>
-    <blockquote>
-      {quote}
-    </blockquote>
-  </div>
-  
-  <div class="testimonial-full">
-    <p>{testimonial}</p>
-  </div>
-  
-  {tags.length > 0 && (
-    <div class="testimonial-tags">
-      {tags.map(tag => <span class="tag">{tag}</span>)}
+
+    <div class="testimonial-full">
+        <p>{testimonial}</p>
     </div>
-  )}
+
+    {
+        tags.length > 0 && (
+            <div class="testimonial-tags">
+                {tags.map((tag) => (
+                    <span class="tag">{tag}</span>
+                ))}
+            </div>
+        )
+    }
 </div>
 
 <style>
-  .testimonial-card {
-    background: rgba(255, 255, 255, 0.05);
-    border-radius: 12px;
-    padding: 2rem;
-    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
-    transition: transform 0.3s, box-shadow 0.3s;
-    overflow: hidden;
-  }
+    .testimonial-card {
+        background: rgba(255, 255, 255, 0.05);
+        border-radius: 12px;
+        padding: 2rem;
+        box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+        transition:
+            transform 0.3s,
+            box-shadow 0.3s;
+        overflow: hidden;
+    }
 
-  .testimonial-card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 12px 40px rgba(0, 170, 255, 0.15);
-  }
+    .testimonial-card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 12px 40px rgba(0, 170, 255, 0.15);
+    }
 
-  .testimonial-header {
-    display: flex;
-    align-items: center;
-    margin-bottom: 1.5rem;
-  }
+    .testimonial-header {
+        display: flex;
+        align-items: center;
+        margin-bottom: 1.5rem;
+    }
 
-  .testimonial-image {
-    width: 70px;
-    height: 70px;
-    border-radius: 50%;
-    overflow: hidden;
-    flex-shrink: 0;
-    margin-right: 1rem;
-    border: 2px solid var(--color-primary);
-  }
+    .testimonial-image {
+        width: 70px;
+        height: 70px;
+        border-radius: 50%;
+        overflow: hidden;
+        flex-shrink: 0;
+        margin-right: 1rem;
+        border: 2px solid var(--color-primary);
+    }
 
-  .testimonial-image img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-  }
+    .testimonial-image img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
 
-  .testimonial-meta {
-    flex-grow: 1;
-  }
+    .testimonial-meta {
+        flex-grow: 1;
+    }
 
-  .testimonial-name {
-    font-size: 1.2rem;
-    margin: 0 0 0.25rem;
-    color: var(--color-primary);
-  }
+    .testimonial-name {
+        font-size: 1.2rem;
+        margin: 0 0 0.25rem;
+        color: var(--color-primary);
+    }
 
-  .testimonial-company {
-    font-size: 0.9rem;
-    margin: 0 0 0.5rem;
-    opacity: 0.8;
-  }
+    .testimonial-company {
+        font-size: 0.9rem;
+        margin: 0 0 0.5rem;
+        opacity: 0.8;
+    }
 
-  .testimonial-website {
-    font-size: 0.8rem;
-    color: var(--color-primary);
-    text-decoration: none;
-    display: inline-block;
-    margin-bottom: 0.5rem;
-  }
+    .testimonial-website {
+        font-size: 0.8rem;
+        color: var(--color-primary);
+        text-decoration: none;
+        display: inline-block;
+        margin-bottom: 0.5rem;
+    }
 
-  .testimonial-rating {
-    font-size: 1rem;
-    color: #ffc107;
-  }
+    .testimonial-rating {
+        font-size: 1rem;
+        color: #ffc107;
+    }
 
-  .testimonial-quote {
-    position: relative;
-    margin-bottom: 1.5rem;
-    padding: 0.5rem 0 0.5rem 1.5rem;
-    border-left: 3px solid var(--color-primary);
-  }
+    .testimonial-quote {
+        position: relative;
+        margin-bottom: 1.5rem;
+        padding: 0.5rem 0 0.5rem 1.5rem;
+        border-left: 3px solid var(--color-primary);
+    }
 
-  .quote-mark {
-    position: absolute;
-    top: -10px;
-    left: -12px;
-    opacity: 0.2;
-    width: 30px;
-    height: 30px;
-  }
+    .quote-mark {
+        position: absolute;
+        top: -10px;
+        left: -12px;
+        opacity: 0.2;
+        width: 30px;
+        height: 30px;
+    }
 
-  .testimonial-quote blockquote {
-    margin: 0;
-    font-style: italic;
-    font-size: 1.1rem;
-    line-height: 1.6;
-    color: #fff;
-  }
+    .testimonial-quote blockquote {
+        margin: 0;
+        font-style: italic;
+        font-size: 1.1rem;
+        line-height: 1.6;
+        color: #fff;
+    }
 
-  .testimonial-full {
-    margin-bottom: 1.5rem;
-    font-size: 0.95rem;
-    line-height: 1.6;
-    color: #ccc;
-  }
+    .testimonial-full {
+        margin-bottom: 1.5rem;
+        font-size: 0.95rem;
+        line-height: 1.6;
+        color: #ccc;
+    }
 
-  .testimonial-tags {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 0.5rem;
-    margin-top: 1rem;
-  }
+    .testimonial-tags {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0.5rem;
+        margin-top: 1rem;
+    }
 
-  .tag {
-    background: rgba(0, 170, 255, 0.1);
-    color: var(--color-primary);
-    padding: 0.25rem 0.75rem;
-    border-radius: 20px;
-    font-size: 0.75rem;
-    font-weight: 500;
-  }
+    .tag {
+        background: rgba(0, 170, 255, 0.1);
+        color: var(--color-primary);
+        padding: 0.25rem 0.75rem;
+        border-radius: 20px;
+        font-size: 0.75rem;
+        font-weight: 500;
+    }
 </style>
