@@ -1,0 +1,68 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Navigation from '../components/Navigation.astro';
+import ServiceDetails from '../components/ServiceDetails.astro';
+import ContactCTA from '../components/ContactCTA.astro';
+import Footer from '../components/Footer.astro';
+
+const title = "Data Engineering";
+const subtitle = "Transform raw data into valuable business intelligence";
+const description = `
+<p>No Clocks, LLC specializes in data engineering services that help organizations collect, transform, and leverage their data assets effectively. In today's data-driven world, the ability to efficiently process and analyze large volumes of data is a critical competitive advantage.</p>
+
+<p>Our data engineering team has extensive experience building robust data pipelines, data lakes, and data warehousing solutions that serve as the foundation for your analytics and business intelligence initiatives. We work with both structured and unstructured data across a variety of sources to create unified data systems that provide a single source of truth for your organization.</p>
+
+<p>Whether you're looking to modernize your existing data infrastructure or build new data capabilities from the ground up, we have the expertise to design and implement scalable solutions that grow with your business and unlock the full value of your data.</p>
+`;
+
+const features = [
+  {
+    title: "Data Pipeline Development",
+    description: "Robust ETL/ELT pipelines for reliable data processing",
+    icon: "📊"
+  },
+  {
+    title: "Data Warehousing",
+    description: "Modern warehousing solutions for structured analytical data",
+    icon: "🏢"
+  },
+  {
+    title: "Big Data Processing",
+    description: "Scalable systems for handling high-volume, high-velocity data",
+    icon: "📈"
+  },
+  {
+    title: "Data Governance & Quality",
+    description: "Ensuring data accuracy, security, and compliance",
+    icon: "🛡️"
+  }
+];
+
+const caseStudies = [
+  {
+    title: "Retail Analytics Platform",
+    description: "Built a comprehensive data platform for a retail chain that unified data from stores, e-commerce, and supply chain, enabling real-time decision making and personalized customer experiences."
+  },
+  {
+    title: "Healthcare Data Lake",
+    description: "Designed and implemented a HIPAA-compliant data lake solution for a healthcare provider, improving research capabilities while ensuring patient data security and privacy."
+  }
+];
+---
+
+<Layout title="Data Engineering | No Clocks">
+  <Navigation activeLink="/services" />
+  
+  <ServiceDetails
+    title={title}
+    subtitle={subtitle}
+    description={description}
+    imageSrc="/images/services/data-engineering.jpg"
+    imageAlt="Data Engineering at No Clocks"
+    features={features}
+    caseStudies={caseStudies}
+  />
+  
+  <ContactCTA />
+  <Footer />
+</Layout>

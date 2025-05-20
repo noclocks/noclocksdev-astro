@@ -1,7 +1,6 @@
 ---
 import Layout from '../layouts/Layout.astro';
 import Navigation from '../components/Navigation.astro';
-import Header from '../components/Header.astro';
 import ServicesHighlight from '../components/ServicesHighlight.astro';
 import ContactCTA from '../components/ContactCTA.astro';
 import Footer from '../components/Footer.astro';
@@ -9,10 +8,16 @@ import Footer from '../components/Footer.astro';
 
 <Layout title="Services | No Clocks">
   <Navigation activeLink="/services" />
-  <Header />
+  
+  <div class="services-hero">
+    <div class="container">
+      <h1>Our Services</h1>
+      <p class="subtitle">Innovative solutions for your business needs</p>
+    </div>
+  </div>
+  
   <main class="site-main">
-    <section class="container">
-      <h2>Our Services</h2>
+    <section class="container services-intro">
       <p>
         No Clocks offers end-to-end consulting and implementation across a range
         of modern technologies. Our team specialises in bespoke software
@@ -25,3 +30,41 @@ import Footer from '../components/Footer.astro';
   <ContactCTA />
   <Footer />
 </Layout>
+
+<style>
+  .services-hero {
+    background-color: #111;
+    background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.9)), 
+                      url('/images/services-hero.jpg'); /* We'll need to add this image */
+    background-size: cover;
+    background-position: center;
+    padding: 8rem 0 4rem;
+    text-align: center;
+    margin-bottom: 0;
+  }
+
+  .services-hero h1 {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+    color: white;
+  }
+
+  .services-hero .subtitle {
+    font-size: 1.5rem;
+    color: var(--color-primary);
+    margin: 0;
+  }
+  
+  .services-intro {
+    padding-top: 3rem;
+    padding-bottom: 1rem;
+    max-width: 800px;
+    margin: 0 auto;
+    line-height: 1.6;
+  }
+  
+  .services-intro p {
+    font-size: 1.1rem;
+    margin-bottom: 1.5rem;
+  }
+</style>
