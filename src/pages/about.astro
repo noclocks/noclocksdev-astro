@@ -1,32 +1,311 @@
 ---
-import Layout from '../layouts/Layout.astro'
-import Navigation from '../components/Navigation.astro'
-import Header from '../components/Header.astro'
-import ContactCTA from '../components/ContactCTA.astro'
-import Footer from '../components/Footer.astro'
+import Layout from "../layouts/Layout.astro";
+import Navigation from "../components/Navigation.astro";
+import ContactCTA from "../components/ContactCTA.astro";
+import Footer from "../components/Footer.astro";
+import Section from "../components/Section.astro";
+import MissionVision from "../components/MissionVision.astro";
+import TeamMember from "../components/TeamMember.astro";
 ---
 
-<Layout title="About | No Clocks">
+<Layout title="About No Clocks, LLC - Innovative Software Development">
   <Navigation activeLink="/about" />
-  <Header />
+
+  <div class="about-hero">
+    <div class="container">
+      <h1>About No Clocks, LLC</h1>
+      <p class="subtitle">Empowering businesses through technology</p>
+    </div>
+  </div>
+
   <main class="site-main">
-    <section class="container">
-      <h2>About No Clocks</h2>
-      <p>
-        No Clocks, LLC was founded to deliver modern, streamlined technology
-        solutions. Our team brings decades of combined experience across
-        software development, data engineering, artificial intelligence and
-        cloud architecture. We focus on building maintainable solutions that
-        help our clients thrive in the digital era.
+    <Section title="Who We Are" background="default" className="about-intro">
+      <div class="about-content">
+        <p>
+          Our agency embodies a rich and diverse background, navigating through
+          dynamic and progressive environments to deliver unparalleled services.
+          <a
+            href="https://github.com/noclocks"
+            target="_blank"
+            rel="noopener noreferrer">No Clocks</a
+          >
+          aims to become an engineering powerhouse as we boast fluency in an array
+          of programming languages and frameworks, enabling us to excel across diverse
+          industries.
+        </p>
+        <p>
+          No Clocks, LLC was founded to deliver modern, streamlined technology
+          solutions. Our team brings decades of combined experience across
+          software development, data engineering, artificial intelligence and
+          cloud architecture. We focus on building maintainable solutions that
+          help our clients thrive in the digital era.
+        </p>
+      </div>
+    </Section>
+    <Section
+      title="Our Vision & Mission"
+      background="dark"
+      className="about-mission-vision"
+    >
+      <MissionVision
+        title="Our Mission"
+        content={[
+          "At <strong>No Clocks</strong>, our mission is to seamlessly integrate creativity, technical expertise, and cutting-edge solutions to aid businesses across all facets of technology. We envision a future where businesses can thrive without being confined by traditional constraints, and where technology becomes an enabler of limitless possibilities.",
+          'We remove the traditional constraints of time-consuming projects—hence "No Clocks." We emphasize agility, collaboration and measurable outcomes while partnering with organisations of all sizes to accelerate innovation.',
+        ]}
+        imageUrl="/images/atlanta-hero-image.jpeg"
+        imageAlt="Modern office building representing innovation"
+      />
+
+      <MissionVision
+        title="Our Values"
+        content={[
+          "<strong>Innovation</strong>: We constantly push the boundaries of what's possible, embracing new technologies and methodologies to solve complex problems.",
+          "<strong>Integrity</strong>: We operate with honesty, transparency, and ethical behavior in all our interactions with clients, partners, and team members.",
+          "<strong>Excellence</strong>: We are committed to delivering exceptional quality in everything we do, exceeding expectations and setting new standards of excellence.",
+        ]}
+        imageUrl="/images/noclocks-logo.png"
+        imageAlt="No Clocks logo representing our company values"
+        reversed={true}
+      />
+    </Section>
+
+    <Section
+      title="Our Team"
+      subtitle="Meet the talented individuals behind our innovative software solutions"
+      background="default"
+      className="about-team"
+    >
+      <p class="team-introduction">
+        Passionate professionals dedicated to creating exceptional software
+        experiences. Our diverse team brings together expertise from across the
+        technology spectrum to deliver innovative solutions for our clients.
       </p>
-      <p>
-        Our mission is to remove the traditional constraints of time-consuming
-        projects—hence "No Clocks." We emphasize agility, collaboration and
-        measurable outcomes while partnering with organisations of all sizes to
-        accelerate innovation.
-      </p>
-    </section>
+
+      <div class="team-grid">
+        <TeamMember
+          name="Jimmy Briggs"
+          title="CTO | Co-Founder"
+          image="/images/team/jimmy-briggs.png"
+          linkedin="https://linkedin.com/in/jimbrig"
+          github="https://github.com/jimbrig"
+        />
+
+        <TeamMember
+          name="Patrick Howard"
+          title="CEO | Co-Founder"
+          image="/images/team/patrick-howard.png"
+          linkedin="https://linkedin.com/in/phoward38"
+          github="https://github.com/phoward38"
+        />
+      </div>
+
+      <div class="team-cta">
+        <a href="/team" class="btn-primary">Meet our entire team</a>
+      </div>
+    </Section>
+
+    <Section
+      title="Our Approach"
+      background="primary"
+      className="about-approach"
+    >
+      <div class="approach-content">
+        <div class="approach-item">
+          <div class="approach-item__icon">🔍</div>
+          <h3>Discovery</h3>
+          <p>
+            We start by understanding your business objectives, technical
+            requirements, and user needs through in-depth discovery sessions.
+          </p>
+        </div>
+
+        <div class="approach-item">
+          <div class="approach-item__icon">🔄</div>
+          <h3>Agile Development</h3>
+          <p>
+            Our iterative approach ensures continuous delivery of value with
+            regular feedback loops and incremental improvements.
+          </p>
+        </div>
+
+        <div class="approach-item">
+          <div class="approach-item__icon">🚀</div>
+          <h3>Launch & Support</h3>
+          <p>
+            We ensure smooth deployments with comprehensive testing and provide
+            ongoing support to keep your solutions running optimally.
+          </p>
+        </div>
+
+        <div class="approach-item">
+          <div class="approach-item__icon">📈</div>
+          <h3>Continuous Improvement</h3>
+          <p>
+            We monitor performance, gather insights, and implement enhancements
+            to keep your technology solutions evolving with your business.
+          </p>
+        </div>
+      </div>
+    </Section>
   </main>
+
   <ContactCTA />
   <Footer />
 </Layout>
+
+<style>
+  .about-hero {
+    background-color: #111;
+    background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.9)),
+      url("/images/atlanta-hero-image.jpeg");
+    background-size: cover;
+    background-position: center;
+    padding: 8rem 0 4rem;
+    text-align: center;
+    margin-bottom: 0;
+  }
+
+  .about-hero h1 {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+    color: white;
+  }
+
+  .about-hero .subtitle {
+    font-size: 1.5rem;
+    color: var(--color-primary);
+    margin: 0;
+  }
+
+  .about-content {
+    max-width: 800px;
+    margin: 0 auto;
+    line-height: 1.8;
+  }
+
+  .about-content p {
+    margin-bottom: 1.5rem;
+    font-size: 1.1rem;
+  }
+
+  .about-content a {
+    color: var(--color-primary);
+    text-decoration: none;
+    font-weight: 500;
+    transition: color 0.2s;
+  }
+
+  .about-content a:hover {
+    color: var(--color-primary-dark);
+    text-decoration: underline;
+  }
+
+  .team-introduction {
+    text-align: center;
+    max-width: 800px;
+    margin: 0 auto 3rem;
+    font-size: 1.1rem;
+    line-height: 1.6;
+  }
+
+  .team-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 2.5rem;
+    margin-top: 2rem;
+  }
+
+  .team-cta {
+    text-align: center;
+    margin-top: 3rem;
+  }
+
+  .btn-primary {
+    display: inline-block;
+    padding: 0.8rem 1.6rem;
+    background-color: var(--color-primary);
+    color: white;
+    text-decoration: none;
+    border-radius: 4px;
+    font-weight: 600;
+    transition: background-color 0.3s ease;
+  }
+
+  .btn-primary:hover {
+    background-color: var(--color-primary-dark);
+  }
+
+  .approach-content {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+    margin-top: 1rem;
+  }
+
+  .approach-item {
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 8px;
+    padding: 2rem;
+    text-align: center;
+    transition: transform 0.3s ease;
+  }
+
+  .approach-item:hover {
+    transform: translateY(-10px);
+  }
+
+  .approach-item__icon {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+  }
+
+  .approach-item h3 {
+    margin: 1rem 0;
+    font-size: 1.5rem;
+  }
+
+  /* Section spacing */
+  .site-main section {
+    margin-bottom: 0;
+  }
+
+  .site-main section:last-child {
+    margin-bottom: 0;
+  }
+
+  .about-mission-vision {
+    margin-top: 0;
+  }
+
+  /* Responsive adjustments */
+  @media (max-width: 768px) {
+    .about-hero h1 {
+      font-size: 2.5rem;
+    }
+
+    .about-hero .subtitle {
+      font-size: 1.2rem;
+    }
+
+    .team-grid {
+      grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+      gap: 1.5rem;
+    }
+
+    .approach-content {
+      grid-template-columns: 1fr;
+      gap: 1.5rem;
+    }
+  }
+
+  @media (max-width: 480px) {
+    .approach-item {
+      padding: 1.5rem;
+    }
+
+    .approach-item__icon {
+      font-size: 2.5rem;
+    }
+  }
+</style>

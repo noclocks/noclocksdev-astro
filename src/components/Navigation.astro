@@ -5,13 +5,22 @@ const { activeLink = "/" } = Astro.props;
 <nav class="site-nav">
   <div class="container">
     <a href="/" class="nav-logo">
-      <img src="/images/noclocks-logo-wordmark-white.svg" alt="No Clocks" height="40">
+      <img
+        src="/images/noclocks-logo-wordmark-white.svg"
+        alt="No Clocks"
+        height="40"
+      />
     </a>
     <div class="nav-links">
       <a href="/" class={activeLink === "/" ? "active" : ""}>Home</a>
       <a href="/about" class={activeLink === "/about" ? "active" : ""}>About</a>
-      <a href="/services" class={activeLink === "/services" ? "active" : ""}>Services</a>
-      <a href="/contact" class={activeLink === "/contact" ? "active" : ""}>Contact</a>
+      <a href="/services" class={activeLink === "/services" ? "active" : ""}
+        >Services</a
+      >
+      <a href="/team" class={activeLink === "/team" ? "active" : ""}>Team</a>
+      <a href="/contact" class={activeLink === "/contact" ? "active" : ""}
+        >Contact</a
+      >
     </div>
   </div>
 </nav>
@@ -55,12 +64,13 @@ const { activeLink = "/" } = Astro.props;
         position: relative;
         transition: color 0.2s ease;
 
-        &:hover, &.active {
+        &:hover,
+        &.active {
           color: #0af;
         }
 
         &.active::after {
-          content: '';
+          content: "";
           position: absolute;
           left: 0;
           right: 0;
