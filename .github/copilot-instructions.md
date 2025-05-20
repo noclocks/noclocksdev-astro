@@ -59,6 +59,19 @@ When assisting with this codebase, please follow these guidelines:
 - Ensure all links work properly and follow the established site structure
 - Images should be properly optimized and placed in `public/images/`
 
+### Page Layout Guidelines
+
+#### Home Page
+- Hero section with logo, tagline, and brief introduction
+- "Why Choose Us" section directly below the hero
+- Services highlight section limited to three services (using the `limit` prop)
+- Contact CTA section
+- Consistent footer across all pages
+
+#### Services Page
+- Complete listing of all available services
+- Each service should have its own detailed page
+
 ### Performance Considerations
 
 - Keep component structure clean and optimized
