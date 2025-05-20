@@ -4,22 +4,32 @@ const services = [
   {
     icon: "💻",
     title: "Software Engineering",
-    description: "Custom software solutions built with modern technologies to solve your complex business challenges."
+    description: "Custom software solutions built with modern technologies to solve your complex business challenges.",
+    link: "/services/software-engineering"
   },
   {
     icon: "☁️",
     title: "Cloud Architecture",
-    description: "Scalable, secure, and cost-effective cloud infrastructure design and implementation."
+    description: "Scalable, secure, and cost-effective cloud infrastructure design and implementation.",
+    link: "/services/cloud-computing"
   },
   {
     icon: "🤖",
     title: "AI Solutions",
-    description: "Leverage the power of artificial intelligence and machine learning to unlock insights and automate processes."
+    description: "Leverage the power of artificial intelligence and machine learning to unlock insights and automate processes.",
+    link: "/services/ai-solutions"
   },
   {
     icon: "📊",
     title: "Data Engineering",
-    description: "Transform raw data into valuable business intelligence with robust data pipelines and analytics."
+    description: "Transform raw data into valuable business intelligence with robust data pipelines and analytics.",
+    link: "/services/data-engineering"
+  },
+  {
+    icon: "🛒",
+    title: "E-commerce Solutions",
+    description: "Building robust online stores that drive sales and deliver excellent customer experiences.",
+    link: "/services/ecommerce"
   }
 ];
 
@@ -36,7 +46,7 @@ const { title = "Our Services" } = Astro.props;
           <div class="service-icon">{service.icon}</div>
           <h3 class="service-title">{service.title}</h3>
           <p class="service-description">{service.description}</p>
-          <a href="/services" class="service-link">Learn more</a>
+          <a href={service.link} class="service-link">Learn more</a>
         </div>
       ))}
     </div>
