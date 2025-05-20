@@ -1,0 +1,75 @@
+---
+interface Props {
+  title: string;
+  subtitle?: string;
+  id?: string;
+  className?: string;
+  background?: 'default' | 'light' | 'dark' | 'primary';
+}
+
+const {
+  title,
+  subtitle,
+  id,
+  className = '',
+  background = 'default'
+} = Astro.props;
+---
+
+<section id={id} class={`content-section background-${background} ${className}`}>
+  <div class="container">
+    <div class="section-header">
+      <h2>{title}</h2>
+      {subtitle && <p class="section-subtitle">{subtitle}</p>}
+    </div>
+    <div class="section-content">
+      <slot />
+    </div>
+  </div>
+</section>
+
+<style>
+  .content-section {
+    padding: 5rem 0;
+  }
+
+  .background-default {
+    background-color: var(--color-background, #ffffff);
+  }
+
+  .background-light {
+    background-color: var(--color-background-soft, #f9f9f9);
+  }
+
+  .background-dark {
+    background-color: var(--color-background-mute, #333);
+    color: #fff;
+  }
+
+  .background-primary {
+    background-color: var(--color-primary, #0077cc);
+    color: #fff;
+  }
+
+  .section-header {
+    text-align: center;
+    margin-bottom: 3rem;
+  }
+
+  h2 {
+    font-size: 2.5rem;
+    margin-bottom: 0.5rem;
+  }
+
+  .section-subtitle {
+    font-size: 1.2rem;
+    max-width: 700px;
+    margin: 0 auto;
+    color: var(--color-text-light, #666);
+  }
+
+  .background-dark .section-subtitle,
+  .background-primary .section-subtitle {
+    color: rgba(255, 255, 255, 0.8);
+  }
+</style>

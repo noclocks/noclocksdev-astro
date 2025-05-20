@@ -1,0 +1,98 @@
+---
+interface Props {
+  title: string;
+  content: string | string[];
+  imageUrl: string;
+  imageAlt?: string;
+  reversed?: boolean;
+}
+
+const {
+  title,
+  content,
+  imageUrl,
+  imageAlt = "Illustrative image",
+  reversed = false
+} = Astro.props;
+
+// Convert content to array if it's a string
+const paragraphs = typeof content === 'string' ? [content] : content;
+---
+
+<div class={`mission-vision-container ${reversed ? 'reversed' : ''}`}>
+  <div class="content-container">
+    <h2>{title}</h2>
+    {paragraphs.map(paragraph => (
+      <p set:html={paragraph}></p>
+    ))}
+  </div>
+  <div class="image-container">
+    <img src={imageUrl} alt={imageAlt} loading="lazy" />
+  </div>
+</div>
+
+<style>
+  .mission-vision-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 3rem;
+    align-items: center;
+    margin: 4rem 0;
+  }
+
+  .mission-vision-container.reversed {
+    direction: rtl;
+  }
+
+  .mission-vision-container.reversed .content-container,
+  .mission-vision-container.reversed .image-container {
+    direction: ltr;
+  }
+
+  .content-container h2 {
+    margin-top: 0;
+    font-size: 2rem;
+    color: var(--color-heading, #222);
+    margin-bottom: 1.5rem;
+  }
+
+  .content-container p {
+    margin-bottom: 1.2rem;
+    line-height: 1.6;
+  }
+
+  .content-container p:last-child {
+    margin-bottom: 0;
+  }
+
+  .image-container img {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.15);
+    transition: transform 0.3s ease;
+  }
+
+  .image-container:hover img {
+    transform: scale(1.02);
+  }
+
+  @media (max-width: 768px) {
+    .mission-vision-container {
+      grid-template-columns: 1fr;
+      gap: 2rem;
+    }
+
+    .mission-vision-container.reversed {
+      direction: ltr;
+    }
+
+    .image-container {
+      order: 1;
+    }
+
+    .content-container {
+      order: 2;
+    }
+  }
+</style>
