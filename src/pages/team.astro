@@ -7,173 +7,182 @@ import ContactCTA from "../components/ContactCTA.astro";
 import Footer from "../components/Footer.astro";
 
 // Import team member data
-import { getCollection } from 'astro:content';
+import { getCollection } from "astro:content";
 
 // Fetch team data directly from the markdown files
 const teamMembers = [
-  {
-    name: "Jimmy Briggs",
-    title: "CTO | Co-Founder | Full Stack Developer",
-    bio: "Creative and entrepreneurial Software Engineer and Actuarial Scientist with background working in dynamic and progressive environments as both an actuary and a developer in large and small organizations. Fluent in a multitude of programming languages and frameworks used to develop software within a wide variety of industries.",
-    image: "/images/team/jimmy-briggs.png",
-    linkedin: "https://www.linkedin.com/in/jimbrig",
-    github: "https://github.com/jimbrig",
-    twitter: "https://twitter.com/jimmy_briggs",
-    email: "jimmy.briggs@noclocks.dev"
-  },
-  {
-    name: "Patrick Howard",
-    title: "CEO | Co-Founder | Full Stack Developer",
-    bio: "As a Full Stack Developer with a background in Biomedical Engineering, I have applied my interdisciplinary skills and knowledge in research, analytics, data management, software development, web/mobile applications, DevOps, SaaS/PaaS, and cloud computing to create innovative solutions for a variety of projects across a breadth of frameworks and services.",
-    image: "/images/team/patrick-howard.png",
-    linkedin: "https://www.linkedin.com/in/phoward38",
-    github: "https://github.com/phoward38",
-    twitter: "https://twitter.com/phoward38",
-    email: "patrick.howard@noclocks.dev"
-  }
+    {
+        name: "Jimmy Briggs",
+        title: "CTO | Co-Founder | Full Stack Developer",
+        bio: "Creative and entrepreneurial Software Engineer and Actuarial Scientist with background working in dynamic and progressive environments as both an actuary and a developer in large and small organizations. Fluent in a multitude of programming languages and frameworks used to develop software within a wide variety of industries.",
+        image: "/images/team/jimmy-briggs.png",
+        linkedin: "https://www.linkedin.com/in/jimbrig",
+        github: "https://github.com/jimbrig",
+        twitter: "https://twitter.com/jimmy_briggs",
+        email: "jimmy.briggs@noclocks.dev",
+    },
+    {
+        name: "Patrick Howard",
+        title: "CEO | Co-Founder | Full Stack Developer",
+        bio: "As a Full Stack Developer with a background in Biomedical Engineering, I have applied my interdisciplinary skills and knowledge in research, analytics, data management, software development, web/mobile applications, DevOps, SaaS/PaaS, and cloud computing to create innovative solutions for a variety of projects across a breadth of frameworks and services.",
+        image: "/images/team/patrick-howard.png",
+        linkedin: "https://www.linkedin.com/in/phoward38",
+        github: "https://github.com/phoward38",
+        twitter: "https://twitter.com/phoward38",
+        email: "patrick.howard@noclocks.dev",
+    },
 ];
 ---
 
 <Layout title="Our Team | No Clocks LLC">
-  <Navigation activeLink="/team" />
+    <Navigation activeLink="/team" />
 
-  <div class="team-hero">
-    <div class="container">
-      <h1>Meet our talented team</h1>
-      <p class="subtitle">You're in good hands</p>
+    <div class="team-hero">
+        <div class="container">
+            <h1>Meet our talented team</h1>
+            <p class="subtitle">You're in good hands</p>
+        </div>
     </div>
-  </div>
 
-  <main class="site-main">
-    <Section title="Our Team" background="default" className="team-section">
-      <p class="team-intro">
-        Our team brings extensive professional experience to
-        assist businesses with their diverse needs. Our
-        passion for helping our clients is what unites us. We
-        can't wait to work with you.
-      </p>
+    <main class="site-main">
+        <Section title="Our Team" background="default" className="team-section">
+            <p class="team-intro">
+                Our team brings extensive professional experience to assist
+                businesses with their diverse needs. Our passion for helping our
+                clients is what unites us. We can't wait to work with you.
+            </p>
 
-      <div class="team-members">
-        {teamMembers.map((member) => (
-          <div class="team-member-container">
-            <TeamMember
-              name={member.name}
-              title={member.title}
-              image={member.image}
-              linkedin={member.linkedin}
-              github={member.github}
-              twitter={member.twitter}
-            />
-            <div class="team-member-details">
-              <h3>{member.name}</h3>
-              <p class="team-member-title">{member.title}</p>
-              <p class="team-member-bio">{member.bio}</p>
-              <a href={`mailto:${member.email}`} class="team-member-contact">Contact {member.name.split(' ')[0]}</a>
+            <div class="team-members">
+                {
+                    teamMembers.map((member) => (
+                        <div class="team-member-container">
+                            <TeamMember
+                                name={member.name}
+                                title={member.title}
+                                image={member.image}
+                                linkedin={member.linkedin}
+                                github={member.github}
+                                twitter={member.twitter}
+                            />
+                            <div class="team-member-details">
+                                <h3>{member.name}</h3>
+                                <p class="team-member-title">{member.title}</p>
+                                <p class="team-member-bio">{member.bio}</p>
+                                <a
+                                    href={`mailto:${member.email}`}
+                                    class="team-member-contact"
+                                >
+                                    Contact {member.name.split(" ")[0]}
+                                </a>
+                            </div>
+                        </div>
+                    ))
+                }
             </div>
-          </div>
-        ))}
-      </div>
-    </Section>
-  </main>
+        </Section>
+    </main>
 
-  <ContactCTA />
-  <Footer />
+    <ContactCTA />
+    <Footer />
 </Layout>
 
 <style>
-  .team-hero {
-    background-color: #111;
-    background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.9)), 
-                      url('/images/team-collaboration.jpg'); /* We'll need to create/add this image */
-    background-size: cover;
-    background-position: center;
-    padding: 8rem 0 4rem;
-    text-align: center;
-    margin-bottom: 0;
-  }
+    .team-hero {
+        background-color: #111;
+        background-image: linear-gradient(
+                rgba(0, 0, 0, 0.7),
+                rgba(0, 0, 0, 0.9)
+            ),
+            url("/images/team-collaboration.jpg"); /* We'll need to create/add this image */
+        background-size: cover;
+        background-position: center;
+        padding: 8rem 0 4rem;
+        text-align: center;
+        margin-bottom: 0;
+    }
 
-  .team-hero h1 {
-    font-size: 3rem;
-    margin-bottom: 1rem;
-    color: white;
-  }
+    .team-hero h1 {
+        font-size: 3rem;
+        margin-bottom: 1rem;
+        color: white;
+    }
 
-  .team-hero .subtitle {
-    font-size: 1.5rem;
-    color: var(--color-primary);
-    margin: 0;
-  }
-  
-  .team-intro {
-    max-width: 800px;
-    margin: 0 auto 3rem;
-    text-align: center;
-    font-size: 1.2rem;
-    line-height: 1.6;
-  }
+    .team-hero .subtitle {
+        font-size: 1.5rem;
+        color: var(--color-primary);
+        margin: 0;
+    }
 
-  .team-members {
-    display: flex;
-    flex-direction: column;
-    gap: 5rem;
-    margin-top: 2rem;
-  }
+    .team-intro {
+        max-width: 800px;
+        margin: 0 auto 3rem;
+        text-align: center;
+        font-size: 1.2rem;
+        line-height: 1.6;
+    }
 
-  .team-member-container {
-    display: grid;
-    grid-template-columns: 300px 1fr;
-    gap: 2rem;
-    align-items: start;
-  }
+    .team-members {
+        display: flex;
+        flex-direction: column;
+        gap: 5rem;
+        margin-top: 2rem;
+    }
 
-  .team-member-container:nth-child(even) {
-    direction: rtl;
-  }
-
-  .team-member-container:nth-child(even) .team-member-details {
-    direction: ltr;
-  }
-
-  .team-member-details h3 {
-    margin-top: 0;
-    font-size: 1.8rem;
-    margin-bottom: 0.5rem;
-  }
-
-  .team-member-title {
-    font-size: 1.2rem;
-    color: var(--color-primary);
-    margin-bottom: 1.5rem;
-  }
-
-  .team-member-bio {
-    margin-bottom: 1.5rem;
-    line-height: 1.8;
-  }
-
-  .team-member-contact {
-    display: inline-block;
-    background: var(--color-primary);
-    color: white;
-    padding: 0.6rem 1.2rem;
-    border-radius: 4px;
-    text-decoration: none;
-    font-weight: 500;
-    transition: background 0.3s;
-  }
-
-  .team-member-contact:hover {
-    background: var(--color-primary-dark);
-  }
-
-  @media (max-width: 900px) {
     .team-member-container {
-      grid-template-columns: 1fr;
-      gap: 1rem;
+        display: grid;
+        grid-template-columns: 300px 1fr;
+        gap: 2rem;
+        align-items: start;
     }
 
     .team-member-container:nth-child(even) {
-      direction: ltr;
+        direction: rtl;
     }
-  }
+
+    .team-member-container:nth-child(even) .team-member-details {
+        direction: ltr;
+    }
+
+    .team-member-details h3 {
+        margin-top: 0;
+        font-size: 1.8rem;
+        margin-bottom: 0.5rem;
+    }
+
+    .team-member-title {
+        font-size: 1.2rem;
+        color: var(--color-primary);
+        margin-bottom: 1.5rem;
+    }
+
+    .team-member-bio {
+        margin-bottom: 1.5rem;
+        line-height: 1.8;
+    }
+
+    .team-member-contact {
+        display: inline-block;
+        background: var(--color-primary);
+        color: white;
+        padding: 0.6rem 1.2rem;
+        border-radius: 4px;
+        text-decoration: none;
+        font-weight: 500;
+        transition: background 0.3s;
+    }
+
+    .team-member-contact:hover {
+        background: var(--color-primary-dark);
+    }
+
+    @media (max-width: 900px) {
+        .team-member-container {
+            grid-template-columns: 1fr;
+            gap: 1rem;
+        }
+
+        .team-member-container:nth-child(even) {
+            direction: ltr;
+        }
+    }
 </style>

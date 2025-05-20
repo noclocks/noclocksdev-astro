@@ -1,19 +1,19 @@
 ---
-import Layout from '../layouts/Layout.astro';
-import Navigation from '../components/Navigation.astro';
-import Footer from '../components/Footer.astro';
+import Layout from "../layouts/Layout.astro";
+import Navigation from "../components/Navigation.astro";
+import Footer from "../components/Footer.astro";
 ---
 
 <Layout title="Contact | No Clocks">
   <Navigation activeLink="/contact" />
-  
+
   <div class="contact-hero">
     <div class="container">
       <h1>Contact Us</h1>
       <p class="subtitle">Let's start a conversation</p>
     </div>
   </div>
-  
+
   <main class="site-main">
     <section class="container contact-section">
       <p>
@@ -23,8 +23,8 @@ import Footer from '../components/Footer.astro';
       </p>
       <p>
         Email us directly at
-        <a href="mailto:info@noclocks.dev">info@noclocks.dev</a> or use the
-        contact form below.
+        <a href="mailto:info@noclocks.dev">info@noclocks.dev</a> or use the contact
+        form below.
       </p>
       <!-- TODO: Replace this placeholder with an interactive form -->
       <form class="contact-form">
@@ -50,8 +50,8 @@ import Footer from '../components/Footer.astro';
 <style>
   .contact-hero {
     background-color: #111;
-    background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.9)), 
-                      url('/images/contact-hero.jpg'); /* We'll need to add this image */
+    background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.9)),
+      url("/images/contact-hero.jpg"); /* We'll need to add this image */
     background-size: cover;
     background-position: center;
     padding: 8rem 0 4rem;
@@ -70,27 +70,27 @@ import Footer from '../components/Footer.astro';
     color: var(--color-primary);
     margin: 0;
   }
-  
+
   .contact-section {
     padding-top: 3rem;
     max-width: 700px;
     margin: 0 auto;
   }
-  
+
   .contact-form {
     display: flex;
     flex-direction: column;
     gap: 1.5rem;
     margin-top: 2rem;
   }
-  
+
   .contact-form label {
     display: flex;
     flex-direction: column;
     gap: 0.5rem;
     font-weight: 500;
   }
-  
+
   .contact-form input,
   .contact-form textarea {
     padding: 0.8rem;
@@ -99,11 +99,11 @@ import Footer from '../components/Footer.astro';
     background-color: #111;
     color: #fff;
   }
-  
+
   .contact-form textarea {
     min-height: 150px;
   }
-  
+
   .contact-form button {
     padding: 0.8rem;
     border: none;
@@ -114,17 +114,17 @@ import Footer from '../components/Footer.astro';
     cursor: pointer;
     transition: background-color 0.3s;
   }
-  
+
   .contact-form button:hover {
     background-color: var(--color-primary-dark);
   }
-  
+
   a {
     color: var(--color-primary);
     text-decoration: none;
     transition: color 0.2s;
   }
-  
+
   a:hover {
     color: var(--color-primary-dark);
     text-decoration: underline;
