@@ -2,6 +2,8 @@
 import Layout from '../layouts/Layout.astro';
 import Navigation from '../components/Navigation.astro';
 import Header from '../components/Header.astro';
+import ServicesHighlight from '../components/ServicesHighlight.astro';
+import ContactCTA from '../components/ContactCTA.astro';
 import Footer from '../components/Footer.astro';
 ---
 
@@ -11,8 +13,15 @@ import Footer from '../components/Footer.astro';
   <main class="site-main">
     <section class="container">
       <h2>Our Services</h2>
-      <p>Information about our services will be available soon. Stay tuned!</p>
+      <p>
+        No Clocks offers end-to-end consulting and implementation across a range
+        of modern technologies. Our team specialises in bespoke software
+        engineering, scalable cloud architecture, data engineering and advanced
+        AI solutions. Explore some of our core competencies below.
+      </p>
     </section>
+    <ServicesHighlight title="Core Offerings" />
   </main>
+  <ContactCTA />
   <Footer />
 </Layout>
