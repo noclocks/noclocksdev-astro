@@ -43,7 +43,6 @@ public/images/noclocks-logo-wordmark-black.svg
 public/images/noclocks-logo-wordmark-white-filled.svg
 public/images/noclocks-logo-wordmark-white.svg
 public/robots.txt
-public/styles/global.css
 README.astro.md
 README.md
 src/assets/astro.svg
@@ -146,7 +145,6 @@ docs/repomix.md
 package.json
 public/favicon.svg
 public/robots.txt
-public/styles/global.css
 README.astro.md
 README.md
 src/assets/astro.svg
@@ -249,7 +247,6 @@ docs/repomix.md
 package.json
 public/favicon.svg
 public/robots.txt
-public/styles/global.css
 README.astro.md
 README.md
 src/assets/astro.svg
@@ -352,7 +349,6 @@ docs/repomix.md
 package.json
 public/favicon.svg
 public/robots.txt
-public/styles/global.css
 README.astro.md
 README.md
 src/assets/astro.svg
@@ -453,7 +449,6 @@ astro.config.mjs
 package.json
 public/favicon.svg
 public/robots.txt
-public/styles/global.css
 README.md
 src/assets/astro.svg
 src/assets/background.svg
@@ -553,40 +548,6 @@ User-agent: *
 Allow: /
 ````
 
-## File: public/styles/global.css
-````css
-body {
-  margin: 0;
-  font-family: system-ui, sans-serif;
-  background-color: #000;
-  color: #fff;
-}
-
-.container {
-  max-width: 960px;
-  margin: 0 auto;
-  padding: 1rem;
-}
-
-.site-header,
-.site-footer {
-  text-align: center;
-  padding: 2rem 0;
-  background-color: #111;
-}
-
-.site-main {
-  padding: 3rem 0;
-}
-
-h1, h2 {
-  margin: 0.5em 0;
-}
-
-p {
-  margin: 0.5em 0;
-}
-````
 
 ## File: README.md
 ````markdown
@@ -1142,40 +1103,6 @@ User-agent: *
 Allow: /
 `````
 
-## File: public/styles/global.css
-`````css
-body {
-  margin: 0;
-  font-family: system-ui, sans-serif;
-  background-color: #000;
-  color: #fff;
-}
-
-.container {
-  max-width: 960px;
-  margin: 0 auto;
-  padding: 1rem;
-}
-
-.site-header,
-.site-footer {
-  text-align: center;
-  padding: 2rem 0;
-  background-color: #111;
-}
-
-.site-main {
-  padding: 3rem 0;
-}
-
-h1, h2 {
-  margin: 0.5em 0;
-}
-
-p {
-  margin: 0.5em 0;
-}
-`````
 
 ## File: README.astro.md
 `````markdown
@@ -1748,40 +1675,6 @@ User-agent: *
 Allow: /
 ``````
 
-## File: public/styles/global.css
-``````css
-body {
-  margin: 0;
-  font-family: system-ui, sans-serif;
-  background-color: #000;
-  color: #fff;
-}
-
-.container {
-  max-width: 960px;
-  margin: 0 auto;
-  padding: 1rem;
-}
-
-.site-header,
-.site-footer {
-  text-align: center;
-  padding: 2rem 0;
-  background-color: #111;
-}
-
-.site-main {
-  padding: 3rem 0;
-}
-
-h1, h2 {
-  margin: 0.5em 0;
-}
-
-p {
-  margin: 0.5em 0;
-}
-``````
 
 ## File: README.astro.md
 ``````markdown
@@ -2409,40 +2302,6 @@ User-agent: *
 Allow: /
 ```````
 
-## File: public/styles/global.css
-```````css
-body {
-  margin: 0;
-  font-family: system-ui, sans-serif;
-  background-color: #000;
-  color: #fff;
-}
-
-.container {
-  max-width: 960px;
-  margin: 0 auto;
-  padding: 1rem;
-}
-
-.site-header,
-.site-footer {
-  text-align: center;
-  padding: 2rem 0;
-  background-color: #111;
-}
-
-.site-main {
-  padding: 3rem 0;
-}
-
-h1, h2 {
-  margin: 0.5em 0;
-}
-
-p {
-  margin: 0.5em 0;
-}
-```````
 
 ## File: README.astro.md
 ```````markdown
@@ -3107,40 +2966,6 @@ User-agent: *
 Allow: /
 ````````
 
-## File: public/styles/global.css
-````````css
-body {
-  margin: 0;
-  font-family: system-ui, sans-serif;
-  background-color: #000;
-  color: #fff;
-}
-
-.container {
-  max-width: 960px;
-  margin: 0 auto;
-  padding: 1rem;
-}
-
-.site-header,
-.site-footer {
-  text-align: center;
-  padding: 2rem 0;
-  background-color: #111;
-}
-
-.site-main {
-  padding: 3rem 0;
-}
-
-h1, h2 {
-  margin: 0.5em 0;
-}
-
-p {
-  margin: 0.5em 0;
-}
-````````
 
 ## File: README.astro.md
 ````````markdown
