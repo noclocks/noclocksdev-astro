@@ -32,3 +32,7 @@ Generate a production build in the `dist` directory with:
 ```sh
 npm run build
 ```
+
+## Large files
+
+Large binaries such as legacy archives or high-resolution screenshots should be tracked with [Git LFS](https://git-lfs.com/) or kept outside the repository.
