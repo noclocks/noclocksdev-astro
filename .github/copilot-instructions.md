@@ -72,6 +72,11 @@ When assisting with this codebase, please follow these guidelines:
 - Complete listing of all available services
 - Each service should have its own detailed page
 
+#### All Pages
+- Maintain consistent navigation and footer components across all pages
+- Footer should contain copyright information, contact details, and key links
+- Use the `<Footer />` component at the end of each page
+
 ### Performance Considerations
 
 - Keep component structure clean and optimized
