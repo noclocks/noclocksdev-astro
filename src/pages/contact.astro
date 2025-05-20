@@ -11,7 +11,32 @@ import Footer from '../components/Footer.astro';
   <main class="site-main">
     <section class="container">
       <h2>Contact Us</h2>
-      <p>This page is under construction. Reach out to us anytime with your questions.</p>
+      <p>
+        We'd love to hear from you. Whether you have a project in mind or just
+        want to learn more about what we do, reach out and our team will get
+        back to you as soon as possible.
+      </p>
+      <p>
+        Email us directly at
+        <a href="mailto:info@noclocks.dev">info@noclocks.dev</a> or use the
+        contact form below.
+      </p>
+      <!-- TODO: Replace this placeholder with an interactive form -->
+      <form class="contact-form">
+        <label>
+          Name
+          <input type="text" name="name" required />
+        </label>
+        <label>
+          Email
+          <input type="email" name="email" required />
+        </label>
+        <label>
+          Message
+          <textarea name="message" rows="5" required></textarea>
+        </label>
+        <button type="submit">Send Message</button>
+      </form>
     </section>
   </main>
   <Footer />

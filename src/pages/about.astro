@@ -1,16 +1,32 @@
 ---
 import Layout from '../layouts/Layout.astro'
+import Navigation from '../components/Navigation.astro'
 import Header from '../components/Header.astro'
+import ContactCTA from '../components/ContactCTA.astro'
 import Footer from '../components/Footer.astro'
 ---
 
-<Layout>
+<Layout title="About | No Clocks">
+  <Navigation activeLink="/about" />
   <Header />
   <main class="site-main">
     <section class="container">
       <h2>About No Clocks</h2>
-      <p>No Clocks, LLC was founded to deliver modern, streamlined...</p>
+      <p>
+        No Clocks, LLC was founded to deliver modern, streamlined technology
+        solutions. Our team brings decades of combined experience across
+        software development, data engineering, artificial intelligence and
+        cloud architecture. We focus on building maintainable solutions that
+        help our clients thrive in the digital era.
+      </p>
+      <p>
+        Our mission is to remove the traditional constraints of time-consuming
+        projects—hence "No Clocks." We emphasize agility, collaboration and
+        measurable outcomes while partnering with organisations of all sizes to
+        accelerate innovation.
+      </p>
     </section>
   </main>
+  <ContactCTA />
   <Footer />
 </Layout>
