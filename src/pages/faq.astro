@@ -1,0 +1,241 @@
+---
+import Layout from "../layouts/Layout.astro";
+import Navigation from "../components/Navigation.astro";
+import ContactCTA from "../components/ContactCTA.astro";
+import Footer from "../components/Footer.astro";
+---
+
+<Layout title="Frequently Asked Questions | No Clocks">
+  <Navigation activeLink="/faq" />
+
+  <div class="faq-hero">
+    <div class="container">
+      <h1>Frequently Asked Questions</h1>
+      <p class="subtitle">Learn how to kickstart your project with us</p>
+    </div>
+  </div>
+
+  <main class="site-main">
+    <div class="container faq-intro">
+      <p>
+        Find answers to common questions about our services, processes, and how we can help your business succeed.
+        If you don't see your question answered here, please don't hesitate to contact us.
+      </p>
+    </div>
+
+    <div class="container faq-accordion">
+      <div class="accordion">
+        <div class="accordion-item">
+          <button class="accordion-header">
+            <span>What's the best way to get in touch with you?</span>
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 5v14M5 12h14"></path></svg>
+          </button>
+          <div class="accordion-content">
+            <p>We'd love to hear from you. Feel free to reach out via our contact form or give us a call. We will try to get back to you in less than 24 hours.</p>
+          </div>
+        </div>
+
+        <div class="accordion-item">
+          <button class="accordion-header">
+            <span>Where are you located?</span>
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 5v14M5 12h14"></path></svg>
+          </button>
+          <div class="accordion-content">
+            <p>We are proudly located in Atlanta.</p>
+          </div>
+        </div>
+
+        <div class="accordion-item">
+          <button class="accordion-header">
+            <span>When are you available?</span>
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 5v14M5 12h14"></path></svg>
+          </button>
+          <div class="accordion-content">
+            <p>Check our business hours on the contact page. If you ever have a question outside of these hours, don't hesitate to reach out!</p>
+          </div>
+        </div>
+
+        <div class="accordion-item">
+          <button class="accordion-header">
+            <span>What forms of payment do you accept?</span>
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 5v14M5 12h14"></path></svg>
+          </button>
+          <div class="accordion-content">
+            <p>We accept all major credit cards, PayPal, ACH, and more.</p>
+          </div>
+        </div>
+
+        <div class="accordion-item">
+          <button class="accordion-header">
+            <span>What is so special about No Clocks, LLC?</span>
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 5v14M5 12h14"></path></svg>
+          </button>
+          <div class="accordion-content">
+            <p>We're glad you asked! What sets us apart is our commitment to our customers and our enthusiasm for what we do.</p>
+          </div>
+        </div>
+
+        <div class="accordion-item">
+          <button class="accordion-header">
+            <span>How do I start a project with No Clocks?</span>
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 5v14M5 12h14"></path></svg>
+          </button>
+          <div class="accordion-content">
+            <p>Starting a project with us is easy! Simply reach out through our contact form or give us a call. We'll schedule an initial consultation to discuss your needs, goals, and how we can help you achieve them. From there, we'll provide a detailed proposal and project plan.</p>
+          </div>
+        </div>
+
+        <div class="accordion-item">
+          <button class="accordion-header">
+            <span>What industries do you work with?</span>
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 5v14M5 12h14"></path></svg>
+          </button>
+          <div class="accordion-content">
+            <p>We have experience working with clients across various industries, including healthcare, finance, legal, education, retail, and more. Our diverse expertise allows us to adapt our services to meet the specific needs of your industry.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <ContactCTA />
+  <Footer />
+</Layout>
+
+<style>
+  .faq-hero {
+    background-color: #111;
+    background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.9)),
+      url("/images/heroes/testimonials-hero.jpg");
+    background-size: cover;
+    background-position: center;
+    padding: 8rem 0 4rem;
+    text-align: center;
+    margin-bottom: 0;
+  }
+
+  .faq-hero h1 {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+    color: white;
+  }
+
+  .faq-hero .subtitle {
+    font-size: 1.5rem;
+    color: var(--color-primary);
+    margin: 0;
+  }
+
+  .faq-intro {
+    padding-top: 3rem;
+    padding-bottom: 1rem;
+    max-width: 800px;
+    margin: 0 auto;
+    text-align: center;
+    font-size: 1.2rem;
+    line-height: 1.6;
+  }
+
+  .faq-accordion {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 2rem 0 4rem;
+  }
+
+  .accordion {
+    width: 100%;
+    border-radius: 8px;
+    overflow: hidden;
+  }
+
+  .accordion-item {
+    margin-bottom: 1rem;
+    border: 1px solid #e0e0e0;
+    border-radius: 8px;
+    overflow: hidden;
+  }
+
+  .accordion-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    background: #f9f9f9;
+    padding: 1.25rem 1.5rem;
+    cursor: pointer;
+    border: none;
+    text-align: left;
+    font-weight: 600;
+    font-size: 1.1rem;
+    transition: background-color 0.3s ease;
+  }
+
+  .accordion-header:hover {
+    background-color: #f0f0f0;
+  }
+
+  .accordion-header svg {
+    min-width: 24px;
+    transition: transform 0.3s ease;
+  }
+
+  .accordion-item.active .accordion-header svg {
+    transform: rotate(45deg);
+  }
+
+  .accordion-content {
+    max-height: 0;
+    overflow: hidden;
+    padding: 0 1.5rem;
+    transition: max-height 0.3s ease, padding 0.3s ease;
+  }
+
+  .accordion-item.active .accordion-content {
+    max-height: 500px;
+    padding: 1.25rem 1.5rem;
+  }
+
+  @media (max-width: 768px) {
+    .faq-hero h1 {
+      font-size: 2.5rem;
+    }
+
+    .faq-hero .subtitle {
+      font-size: 1.2rem;
+    }
+
+    .accordion-header {
+      padding: 1rem;
+      font-size: 1rem;
+    }
+
+    .accordion-item.active .accordion-content {
+      padding: 1rem;
+    }
+  }
+</style>
+
+<script>
+  // JavaScript for the accordion functionality
+  document.addEventListener('DOMContentLoaded', () => {
+    const accordionItems = document.querySelectorAll('.accordion-item');
+    
+    accordionItems.forEach(item => {
+      const header = item.querySelector('.accordion-header');
+      
+      header.addEventListener('click', () => {
+        const isCurrentlyActive = item.classList.contains('active');
+        
+        // Close all accordion items
+        accordionItems.forEach(accItem => {
+          accItem.classList.remove('active');
+        });
+        
+        // If the clicked item wasn't active before, open it
+        if (!isCurrentlyActive) {
+          item.classList.add('active');
+        }
+      });
+    });
+  });
+</script>
