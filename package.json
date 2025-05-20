@@ -9,7 +9,9 @@
     "astro": "astro"
   },
   "dependencies": {
-    "astro": "^5.7.12"
+    "@astrojs/prism": "^3.2.0",
+    "astro": "^5.7.12",
+    "prismjs": "^1.30.0"
   },
   "devDependencies": {
     "sass": "^1.88.0",
