@@ -36,3 +36,7 @@ npm run build
 ## Large files
 
 Large binaries such as legacy archives or high-resolution screenshots should be tracked with [Git LFS](https://git-lfs.com/) or kept outside the repository.
+
+```shell
+git lfs track "legacy/legacy-b12.zip"
+```
