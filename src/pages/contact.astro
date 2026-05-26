@@ -26,8 +26,15 @@ import Footer from "../components/Footer.astro";
         <a href="mailto:info@noclocks.dev">info@noclocks.dev</a> or use the contact
         form below.
       </p>
-      <!-- TODO: Replace this placeholder with an interactive form -->
-      <form class="contact-form">
+      <div class="contact-details" aria-label="Business contact information">
+        <h2>Business Information</h2>
+        <ul>
+          <li><strong>Email:</strong> <a href="mailto:info@noclocks.dev">info@noclocks.dev</a></li>
+          <li><strong>Location:</strong> Atlanta, Georgia, United States</li>
+          <li><strong>Response time:</strong> Usually within 1 business day</li>
+        </ul>
+      </div>
+            <form class="contact-form">
         <label>
           Name
           <input type="text" name="name" required />
@@ -51,7 +58,7 @@ import Footer from "../components/Footer.astro";
   .contact-hero {
     background-color: #111;
     background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.9)),
-      url("/images/contact-hero.jpg"); /* We'll need to add this image */
+      url("/images/heroes/services-hero.jpg");
     background-size: cover;
     background-position: center;
     padding: 8rem 0 4rem;
@@ -75,6 +82,29 @@ import Footer from "../components/Footer.astro";
     padding-top: 3rem;
     max-width: 700px;
     margin: 0 auto;
+  }
+
+  .contact-details {
+    margin-top: 1.5rem;
+    padding: 1.25rem;
+    border: 1px solid #2a2a2a;
+    border-radius: 8px;
+    background: #0e0e0e;
+  }
+
+  .contact-details h2 {
+    margin-top: 0;
+    margin-bottom: 0.75rem;
+    font-size: 1.1rem;
+  }
+
+  .contact-details ul {
+    margin: 0;
+    padding-left: 1.2rem;
+  }
+
+  .contact-details li {
+    margin-bottom: 0.5rem;
   }
 
   .contact-form {
